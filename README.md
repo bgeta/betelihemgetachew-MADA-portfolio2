@@ -1,1 +1,1 @@
-# My website and data analysis portfolio
+# My website and data analysis portfolio is up and running! Click here https://bgeta.github.io/betelihemgetachew-MADA-portfolio2/aboutme.html
