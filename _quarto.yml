@@ -18,7 +18,8 @@ website:
             href: ./tidytuesday_exercise.html
     right:
       - icon: github 
-        href: URL-TO-THIS-REPOSITORY-HERE        
+        href: https://github.com/bgeta/betelihemgetachew-MADA-portfolio2
+        
 
 format:
   html:

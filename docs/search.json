@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "aboutme.html",
+    "href": "aboutme.html",
+    "title": "About me",
+    "section": "",
+    "text": "I am a public health professional with years of experience on Tobacco Control both nationally and Globally. I am currently pursuing my DrPH and preparing to write my dissertation. I am hopeful this course will help me get organized and support my data anaysis skill for my dissertation and beyond.\n\n\nAt different points in my career I have used some SAS, SPSS and STATA, some more than others. I am very new to all these modern applications especially GitHub and Quarto and I can’t say I am not intimidated.\nIn my quest to understand this very first module, I found a youtube video that was very useful to me, hope it can be useful to you too!\nCreating Rich Content in Quarto\n\n\nWell, maybe, not so interesting but I think in Amharic (the official language for Ethiopia) and speak in English. Its very hard!\nI look forward to engaging, learning and working with you all!"
+  },
+  {
+    "objectID": "coding_exercise.html",
+    "href": "coding_exercise.html",
+    "title": "R Coding Exercise",
+    "section": "",
+    "text": "Placeholder file for the future R coding exercise."
+  },
+  {
+    "objectID": "tidytuesday_exercise.html",
+    "href": "tidytuesday_exercise.html",
+    "title": "Tidy Tuesday Exercise",
+    "section": "",
+    "text": "Placeholder file for the future Tidy Tuesday exercise."
+  },
+  {
+    "objectID": "visualization_exercise.html",
+    "href": "visualization_exercise.html",
+    "title": "Visualization Exercise",
+    "section": "",
+    "text": "Placeholder file for the future visualization exercise."
+  }
+]

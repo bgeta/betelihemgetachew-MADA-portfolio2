@@ -5,4 +5,22 @@ output:
       toc: FALSE
 ---
 
-Add some text and a figure describing myself.
+# ***Short Bio***
+
+I am a public health professional with years of experience on Tobacco Control both nationally and Globally. I am currently pursuing my DrPH and preparing to write my dissertation. I am hopeful this course will help me get organized and support my data anaysis skill for my dissertation and beyond.
+
+## *Data Analysis and software experiences*
+
+At different points in my career I have used some SAS, SPSS and STATA, some more than others. I am very new to all these modern applications especially GitHub and Quarto and I can't say I am not intimidated.
+
+In my quest to understand this very first module, I found a youtube video that was very useful to me, hope it can be useful to you too!
+
+[Creating Rich Content in Quarto](https://www.youtube.com/watch?v=A9QRN4cpsDY)
+
+### Interesting Personal Fact 
+
+Well, maybe, not so interesting but I think in Amharic (the official language for Ethiopia) and speak in English. Its very hard!
+
+I look forward to engaging, learning and working with you all!
+
+![](picture%20.jpg)
