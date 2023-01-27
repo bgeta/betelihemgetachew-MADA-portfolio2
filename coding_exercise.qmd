@@ -137,6 +137,20 @@ summary(fit1)
 fit2 <- lm(infant_mortality ~ population, data=africadata_2000)
 ```
 
+```{r}
+#this chunk added by SETH Lattner
+  #I believe that the lm() function calls for response~predictor (Y~X) so the models would be
+fit1b<-lm(life_expectancy~infant_mortality, data = africadata_2000)
+summary(fit1b)
+
+  #and
+fit2b<-lm(life_expectancy~population, data = africadata_2000)
+summary(fit2b)
+
+#in this case, model 1 would have significant results (p=2.826e-08)
+
+```
+
 #check your model fit
 ```{r}
 summary(fit2)
@@ -176,3 +190,34 @@ saveRDS(fittable2, file = table_file2)
 ```
 
 Both model fits are not good. The predictor Infant mortality doesnt do a good job of explaining both popuation and life expectancy outcomes in this case.
+
+### The following added by SETH LATTNER
+
+For fun, lets do a bit more plotting on africadata, now looking at the gross domestic product (GDP). First, I want to calculate the per capita GDP.
+
+```{r}
+
+#calculate per capita gdp and add to new dataframe
+gdp_per_cap<-africadata$gdp/africadata$population
+summary(gdp_per_cap)
+africadata_new<-cbind(africadata, gdp_per_cap)
+```
+
+Now, let's look at a few plots for each region of Africa
+
+```{r, message=FALSE, warning=FALSE}
+#boxplot of GDP per capita
+ggplot(africadata_new, aes(region, gdp_per_cap))+
+  labs(x="Region", y = "Per Capita GDP")+
+  geom_boxplot(aes(fill=region), size= 0.5, alpha = 0.2)+
+  theme_classic()+
+  theme(legend.position = "none")
+
+
+#plot infant mortality vs per capita GPD for each region from africadata
+ggplot(data = africadata_new, aes(gdp_per_cap, infant_mortality, color=region))+
+  geom_point(cex=2)+
+  xlab("Per Capita GDP")+
+  ylab("Infant Mortality (Per 1000 Individuals)")+
+  theme_classic()
+```
