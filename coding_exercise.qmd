@@ -138,6 +138,10 @@ fit2 <- lm(infant_mortality ~ population, data=africadata_2000)
 ```
 
 ```{r}
+remove(fit1,fit2)
+```
+
+```{r}
 #this chunk added by SETH Lattner
   #I believe that the lm() function calls for response~predictor (Y~X) so the models would be
 fit1b<-lm(life_expectancy~infant_mortality, data = africadata_2000)
@@ -153,14 +157,16 @@ summary(fit2b)
 
 #check your model fit
 ```{r}
-summary(fit2)
+summary(fit2b)
+
+summary(fit1b)
 ```
 
 #for your first model 
 #use tidy broom function to save your model 
 
 ```{r}
-fittable1 <- broom::tidy(fit1)
+fittable1 <- broom::tidy(fit1b)
 ```
 #check to see what your model looks like 
 ```{r}
@@ -175,7 +181,7 @@ saveRDS(fittable1, file = table_file1)
 #for your second model 
 
 ```{r}
-fittable2 <- broom::tidy(fit2)
+fittable2 <- broom::tidy(fit2b)
 ```
 #check to see what your model looks like 
 
