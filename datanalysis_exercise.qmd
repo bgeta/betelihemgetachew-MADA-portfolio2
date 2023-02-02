@@ -13,7 +13,7 @@ format:
 
 The below data was retrieved from the Global Adult Tobacco Survey website (link: ). The data was collected in 2018 in Botswana among adults 15 years and older. Both smokers and non smokers participated in the survey. a total of 4643 participated in this survey, a subset of 463 participants are used in this analysis. The below are unweighted calculations as I dont know yet how to weight the data. The codebook is located in the datanalysis folder. 
 
-The objective of this analysis is to see if Gender predicts nicotine dependence. Only smokers were included in this analysis. Heavy Smoking Indeix(HSI) re:nicotine dependence was calculated as a score by adding B01+B07 variables.The scores were categorized as low addicition if score is between 0 and 2, and medium/high addiction if between 3 and 6. 
+The objective of this analysis is to see if Gender predicts nicotine dependence. Only smokers were included in this analysis. Heavy Smoking Indeix(HSI) re:nicotine dependence was calculated as a score by adding B01+B07 variables.The scores were categorized as low addicition if score is between 0 and 2, and medium/high addiction score if between 3 and 6. 
 
 This uses MS Word as output format. [See here](https://quarto.org/docs/output-formats/ms-word.html) for more information. You can switch to other formats, like html or pdf. See [the Quarto documentation](https://quarto.org/) for other formats.
 

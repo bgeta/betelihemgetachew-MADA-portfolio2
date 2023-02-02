@@ -17,7 +17,7 @@ website:
           - text: "Tidy Tuesday Exercise"
             href: ./tidytuesday_exercise.html
           - text: "Mini Data Analysis Exercise"
-            href: ./data_analysis_results.html
+            href: ./datanalysis_exercise.html
     right:
       - icon: github 
         href: https://github.com/bgeta/betelihemgetachew-MADA-portfolio2
