@@ -40,5 +40,75 @@
     "title": "R Coding Exercise",
     "section": "—- savedata ——–",
     "text": "—- savedata ——–"
+  },
+  {
+    "objectID": "datanalysis_exercise.html",
+    "href": "datanalysis_exercise.html",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "",
+    "text": "Background\nThe below data was retrieved from the Global Adult Tobacco Survey website (Dataset for African Region, Botswana, Botswana - National ). The data was collected in 2017 in Botswana among adults 15 years and older. Both smokers and non smokers participated in the survey. a total of 4643 participated in this survey, a subset of 463 participants are used in this analysis. The below are unweighted calculations . The code book(BOT_GATS_207…) is located in the data_analysis_exercise folder.\nObjective\nThe objective of this analysis is to see if Gender predicts nicotine dependence. Only smokers were included in this analysis. Heavy Smoking Indeix(HSI) re:nicotine dependence was calculated as a score by adding B01+B07 variables.The scores were categorized as low addicition if score is between 0 and 2, and medium/high addiction score if between 3 and 6.\nThis uses MS Word as output format. See here for more information. You can switch to other formats, like html or pdf. See the Quarto documentation for other formats.\nData import and cleaning\n#subsetting for variables of interest see bodebook. #A01 Gender, B01 smoking status, B04 age of smoking initiation, B07 smoking how soonafter awaking up, B06A number of cigarettes smoked\n#checking my variables names of interest are selected and their strucutre\n#labeling my variable names\n#trying to set the variable name in the df but it didnt work\n#creating a subset for smokers only based on B01 Do you currently smoke? only interested in responses 1,2 only (for daily and less than daily)\n#saving the above as your dataset\n#creting the HSI variable by adding B01 and B07,\n#check if your variable has been calculated/ added\n#check your new variable\n#remove missing by removig rows if HSI value is N/A\n#check if NA is removed\n#NA is removed but there is an outlier as the max should only be 6, so removing the oulier. plotting a historgram and boxplot to see how many outliers there are\n#identify the outlier\n#Identify the rows correpding to the outlier\n#subsetting to remove rows with 10 from the df\n#check if outlier removed\n#catagorize HSI scores by 0 for scores 0-2, 1 for scores 3 to 6, female(2) recoded to 0 keep male as is 1\n#plot\n#regression y~x\n#The coeffecient of HSI is .11. The log of odds of being Male(1) is .11 times higher for those with medium addiction compared to those with low addiction.\n#save cleanted dataset as RDS\nTo cite other work (important everywhere, but likely happens first in introduction), make sure your references are in the bibtex file specified in the YAML header above (here dataanalysis_template_references.bib) and have the right bibtex key. Then you can include like this:\nExamples of reproducible research projects can for instance be found in [@mckay2020; @mckay2020a]"
+  },
+  {
+    "objectID": "datanalysis_exercise.html#data-aquisition",
+    "href": "datanalysis_exercise.html#data-aquisition",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Data aquisition",
+    "text": "Data aquisition\nAs applicable, explain where and how you got the data. If you directly import the data from an online source, you can combine this section with the next."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#data-import-and-cleaning",
+    "href": "datanalysis_exercise.html#data-import-and-cleaning",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Data import and cleaning",
+    "text": "Data import and cleaning\nWrite code that reads in the file and cleans it so it’s ready for analysis. Since this will be fairly long code for most datasets, it might be a good idea to have it in one or several R scripts. If that is the case, explain here briefly what kind of cleaning/processing you do, and provide more details and well documented code somewhere (e.g. as supplement in a paper). All materials, including files that contain code, should be commented well so everyone can follow along."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#statistical-analysis",
+    "href": "datanalysis_exercise.html#statistical-analysis",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Statistical analysis",
+    "text": "Statistical analysis\nExplain anything related to your statistical analyses."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#exploratorydescriptive-analysis",
+    "href": "datanalysis_exercise.html#exploratorydescriptive-analysis",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Exploratory/Descriptive analysis",
+    "text": "Exploratory/Descriptive analysis\nUse a combination of text/tables/figures to explore and describe your data. Show the most important descriptive results here. Additional ones should go in the supplement. Even more can be in the R and Quarto files that are part of your project.\nNote the loading of the data providing a relative path using the ../../ notation. (Two dots means a folder up). You never want to specify an absolute path like C:\\ahandel\\myproject\\results\\ because if you share this with someone, it won’t work for them since they don’t have that path. You can also use the here R package to create paths. See examples of that below."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#basic-statistical-analysis",
+    "href": "datanalysis_exercise.html#basic-statistical-analysis",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Basic statistical analysis",
+    "text": "Basic statistical analysis\nTo get some further insight into your data, if reasonable you could compute simple statistics (e.g. simple models with 1 predictor) to look for associations between your outcome(s) and each individual predictor variable. Though note that unless you pre-specified the outcome and main exposure, any “p<0.05 means statistical significance” interpretation is not valid."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#full-analysis",
+    "href": "datanalysis_exercise.html#full-analysis",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Full analysis",
+    "text": "Full analysis\nUse one or several suitable statistical/machine learning methods to analyze your data and to produce meaningful figures, tables, etc. This might again be code that is best placed in one or several separate R scripts that need to be well documented. You want the code to produce figures and data ready for display as tables, and save those. Then you load them here.\ngetwd()"
+  },
+  {
+    "objectID": "datanalysis_exercise.html#summary-and-interpretation",
+    "href": "datanalysis_exercise.html#summary-and-interpretation",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Summary and Interpretation",
+    "text": "Summary and Interpretation\nSummarize what you did, what you found and what it means."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#strengths-and-limitations",
+    "href": "datanalysis_exercise.html#strengths-and-limitations",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Strengths and Limitations",
+    "text": "Strengths and Limitations\nDiscuss what you perceive as strengths and limitations of your analysis."
+  },
+  {
+    "objectID": "datanalysis_exercise.html#conclusions",
+    "href": "datanalysis_exercise.html#conclusions",
+    "title": "Module 4 - Data Finding and Wrangling",
+    "section": "Conclusions",
+    "text": "Conclusions\nWhat are the main take-home messages?\nInclude citations in your Rmd file using bibtex, the list of references will automatically be placed at the end\nThis paper [@leek2015] discusses types of analyses.\nThese papers [@mckay2020; @mckay2020a] are good examples of papers published using a fully reproducible setup similar to the one shown in this template.\nNote that this cited reference will show up at the end of the document, the reference formatting is determined by the CSL file specified in the YAML header. Many more style files for almost any journal are available. You also specify the location of your bibtex reference file in the YAML. You can call your reference file anything you like, I just used the generic word references.bib but giving it a more descriptive name is probably better.\n library(pandoc)"
   }
 ]
