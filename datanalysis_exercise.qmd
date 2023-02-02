@@ -90,19 +90,6 @@ print(my_labels)
 Bselect<-set_variable_labels(Bselect,.labels = my_labels)
 ```
 
-```{r}
-Bselect$Gender<-Bselect$A01
-```
-
-```{r}
-dup<-Bselect
-```
-
-
-#GETTING RID OF OLD VARIABLE FUNCTION DPLYR
-```{r}
-Bselect$A01<-NULL
-```
 
 ```{r}
 summary(Bselect)
@@ -208,16 +195,13 @@ female(2) recoded to 0 keep male as is 1
 df_BSelect3$HSI[df_BSelect3$HSI>=0 & df_BSelect3$HSI<=2] <- 0
 
 df_BSelect3$HSI[df_BSelect3$HSI>=3 & df_BSelect3$HSI<=6] <- 1
-```
 
-```{r}
 df_BSelect3$A01[df_BSelect3$A01>=2] <- 0
 ```
 
 ```{r}
 summary(df_BSelect3)
 ```
-
 
 #plot
 
@@ -247,7 +231,7 @@ print(fit1)
 #save cleanted dataset as RDS
 
 ```{r}
-save(df_BSelect3,file="df_BSelect3.RDS")
+saveRDS(df_BSelect3,file="df_BSelect3.RDS")
 ```
 
 To cite other work (important everywhere, but likely happens first in
