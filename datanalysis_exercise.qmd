@@ -91,11 +91,21 @@ Bselect<-set_variable_labels(Bselect,.labels = my_labels)
 ```
 
 ```{r}
-dup<-Bselect
+Bselect$Gender<-Bselect$A01
 ```
 
 ```{r}
-summary(Bselect$B01)
+dup<-Bselect
+```
+
+
+#GETTING RID OF OLD VARIABLE FUNCTION DPLYR
+```{r}
+Bselect$A01<-NULL
+```
+
+```{r}
+summary(Bselect)
 ```
 
 #creating a subset for smokers only based on B01 Do you currently smoke?
