@@ -66,13 +66,16 @@ awaking up, B06A number of cigarettes smoked
 Bselect<- Botsdata[,c("A01","B01","B04","B07","B06A")]
 ```
 
-#checking my variables names of interest are selected and their strucutre
+#checking my variables names of interest are selected and their
+strucutre
 
 ```{r}
 names(Bselect)
 str(Bselect)
 ```
-#labeling my variable names 
+
+#labeling my variable names
+
 ```{r}
 my_labels <- c(A01 = "Gender",
                B01 = "Do you currenlty smoke?",
@@ -85,11 +88,12 @@ my_labels <- c(A01 = "Gender",
 ```{r}
 print(my_labels)
 ```
+
 #trying to set the variable name in the df but it didnt work
+
 ```{r}
 Bselect<-set_variable_labels(Bselect,.labels = my_labels)
 ```
-
 
 ```{r}
 summary(Bselect)
@@ -150,7 +154,9 @@ df_Bselect2[1:500, ]
 summary(df_Bselect2$HSI)
 ```
 
-#NA is removed but there is an outlier as the max should only be 6, so removing the oulier. plotting a historgram and boxplot to see how many outliers there are
+#NA is removed but there is an outlier as the max should only be 6, so
+removing the oulier. plotting a historgram and boxplot to see how many
+outliers there are
 
 ```{r}
 ggplot(df_Bselect2)+
