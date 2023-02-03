@@ -96,7 +96,11 @@ Bselect<-set_variable_labels(Bselect,.labels = my_labels)
 ```
 
 ```{r}
-summary(Bselect)
+dup<-Bselect
+```
+
+```{r}
+summary(Bselect$B01)
 ```
 
 #creating a subset for smokers only based on B01 Do you currently smoke?
@@ -201,7 +205,9 @@ female(2) recoded to 0 keep male as is 1
 df_BSelect3$HSI[df_BSelect3$HSI>=0 & df_BSelect3$HSI<=2] <- 0
 
 df_BSelect3$HSI[df_BSelect3$HSI>=3 & df_BSelect3$HSI<=6] <- 1
+```
 
+```{r}
 df_BSelect3$A01[df_BSelect3$A01>=2] <- 0
 ```
 
@@ -209,35 +215,12 @@ df_BSelect3$A01[df_BSelect3$A01>=2] <- 0
 summary(df_BSelect3)
 ```
 
-#plot
 
-```{r}
-ggplot(df_BSelect3)+geom_bar(aes(x=A01, fill=HSI))
-ggplot(df_BSelect3)+geom_bar(aes(x=A01, fill=HSI))+ggtitle(label="Heavy Smoking Index by Gender where 1 is Male and 0 is Female")
-```
-
-#regression y\~x
-
-```{r}
-fit1<-glm(HSI~A01,family=binomial(link="logit"),data=df_BSelect3)
-```
-
-```{r}
-summary(fit1)
-```
-
-#The coeffecient of HSI is .11. The log of odds of being Male(1) is .11
-times higher for those with medium addiction compared to those with low
-addiction.
-
-```{r}
-print(fit1)
-```
 
 #save cleanted dataset as RDS
 
 ```{r}
-saveRDS(df_BSelect3,file="df_BSelect3.RDS")
+save(df_BSelect3,file="df_BSelect3.RDS")
 ```
 
 To cite other work (important everywhere, but likely happens first in

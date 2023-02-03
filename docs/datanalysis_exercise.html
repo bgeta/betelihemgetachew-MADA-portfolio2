@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Betelihem Getachew">
-<meta name="dcterms.date" content="2023-02-02">
+<meta name="dcterms.date" content="2023-02-03">
 
 <title>My Data Analysis Portfolio - Module 4 - Data Finding and Wrangling</title>
 <style>
@@ -212,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 2, 2023</p>
+      <p class="date">February 3, 2023</p>
     </div>
   </div>
   
@@ -315,29 +315,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Bselect<span class="ot">&lt;-</span><span class="fu">set_variable_labels</span>(Bselect,<span class="at">.labels =</span> my_labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Bselect)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dup<span class="ot">&lt;-</span>Bselect</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Bselect<span class="sc">$</span>B01)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Found more than one class "haven_labelled" in cache; using the first, from namespace 'haven'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Also defined by 'memisc'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Found more than one class "haven_labelled" in cache; using the first, from namespace 'haven'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Also defined by 'memisc'</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      A01             B01             B04             B07       
- Min.   :1.000   Min.   :1.000   Min.   : 1.00   Min.   :1.000  
- 1st Qu.:1.000   1st Qu.:3.000   1st Qu.:17.50   1st Qu.:1.000  
- Median :2.000   Median :3.000   Median :20.00   Median :2.000  
- Mean   :1.588   Mean   :2.764   Mean   :28.83   Mean   :2.456  
- 3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:25.50   3rd Qu.:4.000  
- Max.   :2.000   Max.   :3.000   Max.   :99.00   Max.   :9.000  
-                                 NA's   :4176    NA's   :4176   
-      B06A       
- Min.   :  0.00  
- 1st Qu.:  1.00  
- Median :  4.00  
- Mean   : 27.85  
- 3rd Qu.:  6.00  
- Max.   :999.00  
- NA's   :4176    </code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.000   3.000   3.000   2.764   3.000   3.000 </code></pre>
 </div>
 </div>
 <p>#creating a subset for smokers only based on B01 Do you currently smoke? only interested in responses 1,2 only (for daily and less than daily)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(Bselect, B01<span class="sc">&lt;=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(Bselect, B01<span class="sc">&lt;=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 631 × 5
    A01       B01                   B04 B07                    B06A
@@ -358,10 +359,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>#saving the above as your dataset</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Bselect2<span class="ot">=</span><span class="fu">subset</span>(Bselect, B01<span class="sc">&lt;=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Bselect2<span class="ot">=</span><span class="fu">subset</span>(Bselect, B01<span class="sc">&lt;=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      A01             B01            B04             B07       
  Min.   :1.000   Min.   :1.00   Min.   : 1.00   Min.   :1.000  
@@ -383,19 +384,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>#creting the HSI variable by adding B01 and B07,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>Bselect2<span class="sc">$</span>HSI<span class="ot">&lt;-</span>Bselect2<span class="sc">$</span>B01 <span class="sc">+</span> Bselect2<span class="sc">$</span>B07</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Bselect2<span class="sc">$</span>HSI<span class="ot">&lt;-</span>Bselect2<span class="sc">$</span>B01 <span class="sc">+</span> Bselect2<span class="sc">$</span>B07</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>#check if your variable has been calculated/ added</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 631   6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "A01"  "B01"  "B04"  "B07"  "B06A" "HSI" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Bselect2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [631 × 6] (S3: tbl_df/tbl/data.frame)
  $ A01 : dbl+lbl [1:631] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
@@ -424,7 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>#check your new variable</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>Bselect2[<span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>Bselect2[<span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 500 × 6
    A01       B01                   B04 B07                    B06A   HSI
@@ -442,7 +443,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 # … with 490 more rows
 # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Bselect2<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Bselect2<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
   2.000   2.000   3.000   3.456   5.000  10.000     164 </code></pre>
@@ -450,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>#remove missing by removig rows if HSI value is N/A</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">complete.cases</span>(Bselect2<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">complete.cases</span>(Bselect2<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  [1]  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
  [13]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
@@ -508,11 +509,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_Bselect2<span class="ot">&lt;-</span>Bselect2[<span class="fu">complete.cases</span>(Bselect2<span class="sc">$</span>HSI),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df_Bselect2<span class="ot">&lt;-</span>Bselect2[<span class="fu">complete.cases</span>(Bselect2<span class="sc">$</span>HSI),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>#check if NA is removed</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df_Bselect2[<span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df_Bselect2[<span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 500 × 6
    A01       B01         B04 B07                       B06A   HSI
@@ -530,7 +531,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 # … with 490 more rows
 # ℹ Use `print(n = ...)` to see more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_Bselect2<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_Bselect2<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   2.000   2.000   3.000   3.456   5.000  10.000 </code></pre>
@@ -538,42 +539,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>#NA is removed but there is an outlier as the max should only be 6, so removing the oulier. plotting a historgram and boxplot to see how many outliers there are</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_Bselect2)<span class="sc">+</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x=</span>HSI)<span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins=</span>30L,<span class="at">fill=</span><span class="st">"#0c4c8a"</span>)<span class="sc">+</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="datanalysis_exercise_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_Bselect2<span class="sc">$</span>HSI, <span class="at">ylab=</span><span class="st">"HSI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_Bselect2)<span class="sc">+</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x=</span>HSI)<span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins=</span>30L,<span class="at">fill=</span><span class="st">"#0c4c8a"</span>)<span class="sc">+</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="datanalysis_exercise_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_Bselect2<span class="sc">$</span>HSI, <span class="at">ylab=</span><span class="st">"HSI"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="datanalysis_exercise_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 <p>#identify the outlier</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot.stats</span>(df_Bselect2<span class="sc">$</span>HSI)<span class="sc">$</span>out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot.stats</span>(df_Bselect2<span class="sc">$</span>HSI)<span class="sc">$</span>out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10 10 10 10</code></pre>
 </div>
 </div>
 <p>#Identify the rows correpding to the outlier</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>out<span class="ot">&lt;-</span><span class="fu">boxplot.stats</span>(df_Bselect2<span class="sc">$</span>HSI)<span class="sc">$</span>out</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>out_ind<span class="ot">&lt;-</span><span class="fu">which</span>(df_Bselect2<span class="sc">$</span>HSI <span class="sc">%in%</span> <span class="fu">c</span>(out))</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>out_ind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>out<span class="ot">&lt;-</span><span class="fu">boxplot.stats</span>(df_Bselect2<span class="sc">$</span>HSI)<span class="sc">$</span>out</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>out_ind<span class="ot">&lt;-</span><span class="fu">which</span>(df_Bselect2<span class="sc">$</span>HSI <span class="sc">%in%</span> <span class="fu">c</span>(out))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>out_ind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  22  28  86 142</code></pre>
 </div>
 </div>
 <p>#subsetting to remove rows with 10 from the df</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="ot">&lt;-</span><span class="fu">subset</span>(df_Bselect2, HSI<span class="sc">!=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="ot">&lt;-</span><span class="fu">subset</span>(df_Bselect2, HSI<span class="sc">!=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>#check if outlier removed</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_BSelect3<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_BSelect3<span class="sc">$</span>HSI)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     2.0     2.0     3.0     3.4     5.0     5.0 </code></pre>
@@ -581,14 +582,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>#catagorize HSI scores by 0 for scores 0-2, 1 for scores 3 to 6, female(2) recoded to 0 keep male as is 1</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="sc">$</span>HSI[df_BSelect3<span class="sc">$</span>HSI<span class="sc">&gt;=</span><span class="dv">0</span> <span class="sc">&amp;</span> df_BSelect3<span class="sc">$</span>HSI<span class="sc">&lt;=</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="sc">$</span>HSI[df_BSelect3<span class="sc">$</span>HSI<span class="sc">&gt;=</span><span class="dv">3</span> <span class="sc">&amp;</span> df_BSelect3<span class="sc">$</span>HSI<span class="sc">&lt;=</span><span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="sc">$</span>A01[df_BSelect3<span class="sc">$</span>A01<span class="sc">&gt;=</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="sc">$</span>HSI[df_BSelect3<span class="sc">$</span>HSI<span class="sc">&gt;=</span><span class="dv">0</span> <span class="sc">&amp;</span> df_BSelect3<span class="sc">$</span>HSI<span class="sc">&lt;=</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="sc">$</span>HSI[df_BSelect3<span class="sc">$</span>HSI<span class="sc">&gt;=</span><span class="dv">3</span> <span class="sc">&amp;</span> df_BSelect3<span class="sc">$</span>HSI<span class="sc">&lt;=</span><span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_BSelect3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>df_BSelect3<span class="sc">$</span>A01[df_BSelect3<span class="sc">$</span>A01<span class="sc">&gt;=</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_BSelect3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      A01              B01         B04             B07           B06A       
  Min.   :0.0000   Min.   :1   Min.   : 1.00   Min.   :1.0   Min.   :  0.00  
@@ -606,89 +608,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  Max.   :1.0000  </code></pre>
 </div>
 </div>
-<p>#plot</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_BSelect3)<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>A01, <span class="at">fill=</span>HSI))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Don't know how to automatically pick scale for object of type
-&lt;haven_labelled/vctrs_vctr/double&gt;. Defaulting to continuous.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical transformation: fill
-ℹ This can happen when ggplot fails to infer the correct grouping structure in
-  the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
-  variable into a factor?</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="datanalysis_exercise_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_BSelect3)<span class="sc">+</span><span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>A01, <span class="at">fill=</span>HSI))<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="at">label=</span><span class="st">"Heavy Smoking Index by Gender where 1 is Male and 0 is Female"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Don't know how to automatically pick scale for object of type
-&lt;haven_labelled/vctrs_vctr/double&gt;. Defaulting to continuous.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical transformation: fill
-ℹ This can happen when ggplot fails to infer the correct grouping structure in
-  the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
-  variable into a factor?</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="datanalysis_exercise_files/figure-html/unnamed-chunk-27-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>#regression y~x</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>fit1<span class="ot">&lt;-</span><span class="fu">glm</span>(HSI<span class="sc">~</span>A01,<span class="at">family=</span><span class="fu">binomial</span>(<span class="at">link=</span><span class="st">"logit"</span>),<span class="at">data=</span>df_BSelect3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-glm(formula = HSI ~ A01, family = binomial(link = "logit"), data = df_BSelect3)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--1.5226  -1.5226   0.8678   0.8678   0.9083  
-
-Coefficients:
-            Estimate Std. Error z value Pr(&gt;|z|)   
-(Intercept)   0.6721     0.2509   2.679  0.00739 **
-A01           0.1104     0.2735   0.404  0.68635   
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 578.72  on 462  degrees of freedom
-Residual deviance: 578.56  on 461  degrees of freedom
-AIC: 582.56
-
-Number of Fisher Scoring iterations: 4</code></pre>
-</div>
-</div>
-<p>#The coeffecient of HSI is .11. The log of odds of being Male(1) is .11 times higher for those with medium addiction compared to those with low addiction.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:  glm(formula = HSI ~ A01, family = binomial(link = "logit"), data = df_BSelect3)
-
-Coefficients:
-(Intercept)          A01  
-     0.6721       0.1104  
-
-Degrees of Freedom: 462 Total (i.e. Null);  461 Residual
-Null Deviance:      578.7 
-Residual Deviance: 578.6    AIC: 582.6</code></pre>
-</div>
-</div>
 <p>#save cleanted dataset as RDS</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(df_BSelect3,<span class="at">file=</span><span class="st">"df_BSelect3.RDS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(df_BSelect3,<span class="at">file=</span><span class="st">"df_BSelect3.RDS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To cite other work (important everywhere, but likely happens first in introduction), make sure your references are in the bibtex file specified in the YAML header above (here <code>dataanalysis_template_references.bib</code>) and have the right bibtex key. Then you can include like this:</p>
 <p>Examples of reproducible research projects can for instance be found in <span class="citation" data-cites="mckay2020 mckay2020a">[@mckay2020; @mckay2020a]</span></p>
