@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -144,7 +207,1259 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Placeholder file for the future visualization exercise.</p>
+<p>This visualization exercise was conducted to replicate teh visualziation published on fivethirtyeight.com published in the year 2016 (On-duty police officer deaths in the U.S. <a href="https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/">#15. On -duty police officer deaths</a> The data source for this chart was from the <a href="https://www.odmp.org/">Officer Down Memorial Page (ODMP)</a>. In trying to access the website, I was only able get annual fallen officer statistics <a href="https://www.odmp.org/statistics">Annual Fallen Officer Statistics</a> rather than an aggregate data begining from the year 1700’s as depicted on the fiverthirtyeight website. Alternatively, I was able to look through statista <a href="https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.">U.S. law enforcement deaths 1786-2022, by cause | Statista</a> which also claims to have obtained their data from ODMP. Therefor I used the dataset I found on statista because it is an aggregated data by year begining from the 1700’s. The only difference was that the data in statista only had four catagories causes while the original included heart attack, accidents, etc,., The dataset obtained from statista includes causes such as Gunfire, Assaults/Stabbing, 9/11 attack and related illness, Covid and others. For the data they have in common, its very similar.</p>
+<p>The below figure shows the chart I will attempt to replicate in this exercise</p>
+<p><img src="images/paste-C7215F2E.png" class="img-fluid" width="511"></p>
+<p>Below is the line chart I replicated. All revelant codes are described below.</p>
+<p><img src="images/paste-32BC4579.png" class="img-fluid" width="542"></p>
+<p><strong>Data import and cleaning</strong></p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'skimr' was built under R version 4.2.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'memisc' was built under R version 4.2.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'reshape' was built under R version 4.2.2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lawdata<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/lawenforcementdata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#check the data</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lawdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Year         GUNFIRE       ASSAULT.STABBING
+ Min.   :1786   Min.   :  1.00   Min.   : 1.00   
+ 1st Qu.:1845   1st Qu.: 26.00   1st Qu.: 3.00   
+ Median :1904   Median : 59.00   Median : 5.00   
+ Mean   :1904   Mean   : 65.55   Mean   : 6.02   
+ 3rd Qu.:1963   3rd Qu.: 85.00   3rd Qu.: 8.00   
+ Max.   :2022   Max.   :225.00   Max.   :19.00   
+                NA's   :40       NA's   :40      
+ X9.11_ATTACK_AND_RELATED_ILLNESS     COVID           OTHER       
+ Min.   : 2.00                    Min.   : 55.0   Min.   :  1.00  
+ 1st Qu.:11.00                    1st Qu.:162.0   1st Qu.: 14.25  
+ Median :14.00                    Median :269.0   Median : 74.50  
+ Mean   :21.10                    Mean   :256.7   Mean   : 61.29  
+ 3rd Qu.:28.25                    3rd Qu.:357.5   3rd Qu.: 98.75  
+ Max.   :72.00                    Max.   :446.0   Max.   :138.00  
+ NA's   :217                      NA's   :234     NA's   :67      </code></pre>
+</div>
+</div>
+<p>#in order to use line chart with mulitple variables we #first need to change the df from wide to long using the melt function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_long1<span class="ot">&lt;-</span><span class="fu">melt</span>(lawdata, <span class="at">id.vars=</span><span class="fu">c</span>(<span class="st">"Year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>#check if the data look ok</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_long1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Year                         variable value
+1    1786                          GUNFIRE    NA
+2    1787                          GUNFIRE    NA
+3    1788                          GUNFIRE    NA
+4    1789                          GUNFIRE    NA
+5    1790                          GUNFIRE    NA
+6    1791                          GUNFIRE     1
+7    1792                          GUNFIRE     1
+8    1793                          GUNFIRE    NA
+9    1794                          GUNFIRE     1
+10   1795                          GUNFIRE    NA
+11   1796                          GUNFIRE    NA
+12   1797                          GUNFIRE     2
+13   1798                          GUNFIRE    NA
+14   1799                          GUNFIRE    NA
+15   1800                          GUNFIRE    NA
+16   1801                          GUNFIRE    NA
+17   1802                          GUNFIRE    NA
+18   1803                          GUNFIRE    NA
+19   1804                          GUNFIRE     1
+20   1805                          GUNFIRE    NA
+21   1806                          GUNFIRE    NA
+22   1807                          GUNFIRE     1
+23   1808                          GUNFIRE     2
+24   1809                          GUNFIRE    NA
+25   1810                          GUNFIRE     1
+26   1811                          GUNFIRE     1
+27   1812                          GUNFIRE    NA
+28   1813                          GUNFIRE    NA
+29   1814                          GUNFIRE     1
+30   1815                          GUNFIRE    NA
+31   1816                          GUNFIRE    NA
+32   1817                          GUNFIRE    NA
+33   1818                          GUNFIRE    NA
+34   1819                          GUNFIRE    NA
+35   1820                          GUNFIRE    NA
+36   1821                          GUNFIRE    NA
+37   1822                          GUNFIRE    NA
+38   1823                          GUNFIRE    NA
+39   1824                          GUNFIRE    NA
+40   1825                          GUNFIRE     1
+41   1826                          GUNFIRE    NA
+42   1827                          GUNFIRE    NA
+43   1828                          GUNFIRE     1
+44   1829                          GUNFIRE    NA
+45   1830                          GUNFIRE    NA
+46   1831                          GUNFIRE    NA
+47   1832                          GUNFIRE    NA
+48   1833                          GUNFIRE    NA
+49   1834                          GUNFIRE     1
+50   1835                          GUNFIRE    NA
+51   1836                          GUNFIRE    NA
+52   1837                          GUNFIRE     6
+53   1838                          GUNFIRE     1
+54   1839                          GUNFIRE     9
+55   1840                          GUNFIRE     1
+56   1841                          GUNFIRE     4
+57   1842                          GUNFIRE     1
+58   1843                          GUNFIRE     1
+59   1844                          GUNFIRE     2
+60   1845                          GUNFIRE     2
+61   1846                          GUNFIRE    NA
+62   1847                          GUNFIRE     4
+63   1848                          GUNFIRE     2
+64   1849                          GUNFIRE     1
+65   1850                          GUNFIRE     6
+66   1851                          GUNFIRE     3
+67   1852                          GUNFIRE     4
+68   1853                          GUNFIRE    NA
+69   1854                          GUNFIRE     6
+70   1855                          GUNFIRE    11
+71   1856                          GUNFIRE     3
+72   1857                          GUNFIRE    11
+73   1858                          GUNFIRE    10
+74   1859                          GUNFIRE     9
+75   1860                          GUNFIRE     7
+76   1861                          GUNFIRE     8
+77   1862                          GUNFIRE     7
+78   1863                          GUNFIRE     6
+79   1864                          GUNFIRE    14
+80   1865                          GUNFIRE    14
+81   1866                          GUNFIRE    17
+82   1867                          GUNFIRE    18
+83   1868                          GUNFIRE    17
+84   1869                          GUNFIRE    30
+85   1870                          GUNFIRE    17
+86   1871                          GUNFIRE    29
+87   1872                          GUNFIRE    25
+88   1873                          GUNFIRE    22
+89   1874                          GUNFIRE    26
+90   1875                          GUNFIRE    25
+91   1876                          GUNFIRE    26
+92   1877                          GUNFIRE    29
+93   1878                          GUNFIRE    49
+94   1879                          GUNFIRE    28
+95   1880                          GUNFIRE    33
+96   1881                          GUNFIRE    49
+97   1882                          GUNFIRE    40
+98   1883                          GUNFIRE    42
+99   1884                          GUNFIRE    42
+100  1885                          GUNFIRE    56
+101  1886                          GUNFIRE    40
+102  1887                          GUNFIRE    34
+103  1888                          GUNFIRE    56
+104  1889                          GUNFIRE    44
+105  1890                          GUNFIRE    56
+106  1891                          GUNFIRE    50
+107  1892                          GUNFIRE    73
+108  1893                          GUNFIRE    63
+109  1894                          GUNFIRE    62
+110  1895                          GUNFIRE    68
+111  1896                          GUNFIRE    50
+112  1897                          GUNFIRE    43
+113  1898                          GUNFIRE    82
+114  1899                          GUNFIRE    74
+115  1900                          GUNFIRE    78
+116  1901                          GUNFIRE    84
+117  1902                          GUNFIRE    99
+118  1903                          GUNFIRE    90
+119  1904                          GUNFIRE    74
+120  1905                          GUNFIRE    72
+121  1906                          GUNFIRE    79
+122  1907                          GUNFIRE   100
+123  1908                          GUNFIRE   111
+124  1909                          GUNFIRE    89
+125  1910                          GUNFIRE   110
+126  1911                          GUNFIRE   138
+127  1912                          GUNFIRE   115
+128  1913                          GUNFIRE   120
+129  1914                          GUNFIRE   113
+130  1915                          GUNFIRE   139
+131  1916                          GUNFIRE   133
+132  1917                          GUNFIRE   136
+133  1918                          GUNFIRE   143
+134  1919                          GUNFIRE   198
+135  1920                          GUNFIRE   189
+136  1921                          GUNFIRE   225
+137  1922                          GUNFIRE   210
+138  1923                          GUNFIRE   188
+139  1924                          GUNFIRE   210
+140  1925                          GUNFIRE   190
+141  1926                          GUNFIRE   196
+142  1927                          GUNFIRE   205
+143  1928                          GUNFIRE   179
+144  1929                          GUNFIRE   173
+145  1930                          GUNFIRE   210
+146  1931                          GUNFIRE   199
+147  1932                          GUNFIRE   195
+148  1933                          GUNFIRE   170
+149  1934                          GUNFIRE   152
+150  1935                          GUNFIRE   131
+151  1936                          GUNFIRE   107
+152  1937                          GUNFIRE   100
+153  1938                          GUNFIRE    93
+154  1939                          GUNFIRE    71
+155  1940                          GUNFIRE    66
+156  1941                          GUNFIRE    76
+157  1942                          GUNFIRE    55
+158  1943                          GUNFIRE    52
+159  1944                          GUNFIRE    50
+160  1945                          GUNFIRE    59
+161  1946                          GUNFIRE    73
+162  1947                          GUNFIRE    75
+163  1948                          GUNFIRE    65
+164  1949                          GUNFIRE    55
+165  1950                          GUNFIRE    56
+166  1951                          GUNFIRE    54
+167  1952                          GUNFIRE    60
+168  1953                          GUNFIRE    59
+169  1954                          GUNFIRE    67
+170  1955                          GUNFIRE    44
+171  1956                          GUNFIRE    39
+172  1957                          GUNFIRE    58
+173  1958                          GUNFIRE    46
+174  1959                          GUNFIRE    47
+175  1960                          GUNFIRE    51
+176  1961                          GUNFIRE    61
+177  1962                          GUNFIRE    59
+178  1963                          GUNFIRE    62
+179  1964                          GUNFIRE    62
+180  1965                          GUNFIRE    63
+181  1966                          GUNFIRE    64
+182  1967                          GUNFIRE    85
+183  1968                          GUNFIRE    75
+184  1969                          GUNFIRE   104
+185  1970                          GUNFIRE   112
+186  1971                          GUNFIRE   143
+187  1972                          GUNFIRE   121
+188  1973                          GUNFIRE   145
+189  1974                          GUNFIRE   138
+190  1975                          GUNFIRE   144
+191  1976                          GUNFIRE   105
+192  1977                          GUNFIRE    98
+193  1978                          GUNFIRE   100
+194  1979                          GUNFIRE   114
+195  1980                          GUNFIRE   103
+196  1981                          GUNFIRE    94
+197  1982                          GUNFIRE    93
+198  1983                          GUNFIRE    81
+199  1984                          GUNFIRE    74
+200  1985                          GUNFIRE    73
+201  1986                          GUNFIRE    76
+202  1987                          GUNFIRE    75
+203  1988                          GUNFIRE    80
+204  1989                          GUNFIRE    68
+205  1990                          GUNFIRE    60
+206  1991                          GUNFIRE    73
+207  1992                          GUNFIRE    66
+208  1993                          GUNFIRE    78
+209  1994                          GUNFIRE    85
+210  1995                          GUNFIRE    70
+211  1996                          GUNFIRE    61
+212  1997                          GUNFIRE    69
+213  1998                          GUNFIRE    64
+214  1999                          GUNFIRE    43
+215  2000                          GUNFIRE    50
+216  2001                          GUNFIRE    65
+217  2002                          GUNFIRE    57
+218  2003                          GUNFIRE    49
+219  2004                          GUNFIRE    46
+220  2005                          GUNFIRE    55
+221  2006                          GUNFIRE    52
+222  2007                          GUNFIRE    68
+223  2008                          GUNFIRE    42
+224  2009                          GUNFIRE    48
+225  2010                          GUNFIRE    59
+226  2011                          GUNFIRE    68
+227  2012                          GUNFIRE    48
+228  2013                          GUNFIRE    34
+229  2014                          GUNFIRE    49
+230  2015                          GUNFIRE    41
+231  2016                          GUNFIRE    64
+232  2017                          GUNFIRE    45
+233  2018                          GUNFIRE    52
+234  2019                          GUNFIRE    49
+235  2020                          GUNFIRE    45
+236  2021                          GUNFIRE    62
+237  2022                          GUNFIRE    20
+238  1786                 ASSAULT.STABBING    NA
+239  1787                 ASSAULT.STABBING    NA
+240  1788                 ASSAULT.STABBING    NA
+241  1789                 ASSAULT.STABBING    NA
+242  1790                 ASSAULT.STABBING    NA
+243  1791                 ASSAULT.STABBING     1
+244  1792                 ASSAULT.STABBING    NA
+245  1793                 ASSAULT.STABBING    NA
+246  1794                 ASSAULT.STABBING    NA
+247  1795                 ASSAULT.STABBING    NA
+248  1796                 ASSAULT.STABBING    NA
+249  1797                 ASSAULT.STABBING    NA
+250  1798                 ASSAULT.STABBING    NA
+251  1799                 ASSAULT.STABBING    NA
+252  1800                 ASSAULT.STABBING    NA
+253  1801                 ASSAULT.STABBING    NA
+254  1802                 ASSAULT.STABBING    NA
+255  1803                 ASSAULT.STABBING    NA
+256  1804                 ASSAULT.STABBING    NA
+257  1805                 ASSAULT.STABBING    NA
+258  1806                 ASSAULT.STABBING     1
+259  1807                 ASSAULT.STABBING    NA
+260  1808                 ASSAULT.STABBING     2
+261  1809                 ASSAULT.STABBING    NA
+262  1810                 ASSAULT.STABBING    NA
+263  1811                 ASSAULT.STABBING    NA
+264  1812                 ASSAULT.STABBING    NA
+265  1813                 ASSAULT.STABBING    NA
+266  1814                 ASSAULT.STABBING     1
+267  1815                 ASSAULT.STABBING    NA
+268  1816                 ASSAULT.STABBING     1
+269  1817                 ASSAULT.STABBING    NA
+270  1818                 ASSAULT.STABBING     1
+271  1819                 ASSAULT.STABBING    NA
+272  1820                 ASSAULT.STABBING    NA
+273  1821                 ASSAULT.STABBING    NA
+274  1822                 ASSAULT.STABBING    NA
+275  1823                 ASSAULT.STABBING     2
+276  1824                 ASSAULT.STABBING     1
+277  1825                 ASSAULT.STABBING     1
+278  1826                 ASSAULT.STABBING    NA
+279  1827                 ASSAULT.STABBING     1
+280  1828                 ASSAULT.STABBING     1
+281  1829                 ASSAULT.STABBING     1
+282  1830                 ASSAULT.STABBING     1
+283  1831                 ASSAULT.STABBING    NA
+284  1832                 ASSAULT.STABBING     1
+285  1833                 ASSAULT.STABBING     1
+286  1834                 ASSAULT.STABBING     1
+287  1835                 ASSAULT.STABBING    NA
+288  1836                 ASSAULT.STABBING     4
+289  1837                 ASSAULT.STABBING     6
+290  1838                 ASSAULT.STABBING     7
+291  1839                 ASSAULT.STABBING     2
+292  1840                 ASSAULT.STABBING     1
+293  1841                 ASSAULT.STABBING     2
+294  1842                 ASSAULT.STABBING    NA
+295  1843                 ASSAULT.STABBING     1
+296  1844                 ASSAULT.STABBING     3
+297  1845                 ASSAULT.STABBING     2
+298  1846                 ASSAULT.STABBING    NA
+299  1847                 ASSAULT.STABBING     2
+300  1848                 ASSAULT.STABBING     1
+301  1849                 ASSAULT.STABBING     2
+302  1850                 ASSAULT.STABBING     3
+303  1851                 ASSAULT.STABBING     5
+304  1852                 ASSAULT.STABBING     5
+305  1853                 ASSAULT.STABBING     5
+306  1854                 ASSAULT.STABBING     4
+307  1855                 ASSAULT.STABBING     3
+308  1856                 ASSAULT.STABBING     2
+309  1857                 ASSAULT.STABBING     3
+310  1858                 ASSAULT.STABBING     5
+311  1859                 ASSAULT.STABBING    NA
+312  1860                 ASSAULT.STABBING     3
+313  1861                 ASSAULT.STABBING     8
+314  1862                 ASSAULT.STABBING     2
+315  1863                 ASSAULT.STABBING     4
+316  1864                 ASSAULT.STABBING     3
+317  1865                 ASSAULT.STABBING     1
+318  1866                 ASSAULT.STABBING     4
+319  1867                 ASSAULT.STABBING     4
+320  1868                 ASSAULT.STABBING     1
+321  1869                 ASSAULT.STABBING     3
+322  1870                 ASSAULT.STABBING    13
+323  1871                 ASSAULT.STABBING     4
+324  1872                 ASSAULT.STABBING     4
+325  1873                 ASSAULT.STABBING     7
+326  1874                 ASSAULT.STABBING     7
+327  1875                 ASSAULT.STABBING     2
+328  1876                 ASSAULT.STABBING     7
+329  1877                 ASSAULT.STABBING     4
+330  1878                 ASSAULT.STABBING     2
+331  1879                 ASSAULT.STABBING     7
+332  1880                 ASSAULT.STABBING     4
+333  1881                 ASSAULT.STABBING     6
+334  1882                 ASSAULT.STABBING     5
+335  1883                 ASSAULT.STABBING     1
+336  1884                 ASSAULT.STABBING     7
+337  1885                 ASSAULT.STABBING     4
+338  1886                 ASSAULT.STABBING     8
+339  1887                 ASSAULT.STABBING     7
+340  1888                 ASSAULT.STABBING     5
+341  1889                 ASSAULT.STABBING     2
+342  1890                 ASSAULT.STABBING     5
+343  1891                 ASSAULT.STABBING     8
+344  1892                 ASSAULT.STABBING     7
+345  1893                 ASSAULT.STABBING     4
+346  1894                 ASSAULT.STABBING     5
+347  1895                 ASSAULT.STABBING     4
+348  1896                 ASSAULT.STABBING     4
+349  1897                 ASSAULT.STABBING     7
+350  1898                 ASSAULT.STABBING     5
+351  1899                 ASSAULT.STABBING    10
+352  1900                 ASSAULT.STABBING     9
+353  1901                 ASSAULT.STABBING     5
+354  1902                 ASSAULT.STABBING     2
+355  1903                 ASSAULT.STABBING    11
+356  1904                 ASSAULT.STABBING     5
+357  1905                 ASSAULT.STABBING     8
+358  1906                 ASSAULT.STABBING     7
+359  1907                 ASSAULT.STABBING     7
+360  1908                 ASSAULT.STABBING    13
+361  1909                 ASSAULT.STABBING     7
+362  1910                 ASSAULT.STABBING     8
+363  1911                 ASSAULT.STABBING     8
+364  1912                 ASSAULT.STABBING    11
+365  1913                 ASSAULT.STABBING     9
+366  1914                 ASSAULT.STABBING     6
+367  1915                 ASSAULT.STABBING     8
+368  1916                 ASSAULT.STABBING    14
+369  1917                 ASSAULT.STABBING    14
+370  1918                 ASSAULT.STABBING    14
+371  1919                 ASSAULT.STABBING    10
+372  1920                 ASSAULT.STABBING    10
+373  1921                 ASSAULT.STABBING    11
+374  1922                 ASSAULT.STABBING    12
+375  1923                 ASSAULT.STABBING     4
+376  1924                 ASSAULT.STABBING    11
+377  1925                 ASSAULT.STABBING     5
+378  1926                 ASSAULT.STABBING     6
+379  1927                 ASSAULT.STABBING     8
+380  1928                 ASSAULT.STABBING     8
+381  1929                 ASSAULT.STABBING    19
+382  1930                 ASSAULT.STABBING    14
+383  1931                 ASSAULT.STABBING     2
+384  1932                 ASSAULT.STABBING     8
+385  1933                 ASSAULT.STABBING     8
+386  1934                 ASSAULT.STABBING    15
+387  1935                 ASSAULT.STABBING    15
+388  1936                 ASSAULT.STABBING    10
+389  1937                 ASSAULT.STABBING    11
+390  1938                 ASSAULT.STABBING    14
+391  1939                 ASSAULT.STABBING     5
+392  1940                 ASSAULT.STABBING    12
+393  1941                 ASSAULT.STABBING     3
+394  1942                 ASSAULT.STABBING    16
+395  1943                 ASSAULT.STABBING     7
+396  1944                 ASSAULT.STABBING     6
+397  1945                 ASSAULT.STABBING     6
+398  1946                 ASSAULT.STABBING     9
+399  1947                 ASSAULT.STABBING     8
+400  1948                 ASSAULT.STABBING    10
+401  1949                 ASSAULT.STABBING     6
+402  1950                 ASSAULT.STABBING     5
+403  1951                 ASSAULT.STABBING     6
+404  1952                 ASSAULT.STABBING     7
+405  1953                 ASSAULT.STABBING     5
+406  1954                 ASSAULT.STABBING     6
+407  1955                 ASSAULT.STABBING     1
+408  1956                 ASSAULT.STABBING     2
+409  1957                 ASSAULT.STABBING     4
+410  1958                 ASSAULT.STABBING     3
+411  1959                 ASSAULT.STABBING    NA
+412  1960                 ASSAULT.STABBING     5
+413  1961                 ASSAULT.STABBING     2
+414  1962                 ASSAULT.STABBING     1
+415  1963                 ASSAULT.STABBING     4
+416  1964                 ASSAULT.STABBING     3
+417  1965                 ASSAULT.STABBING    10
+418  1966                 ASSAULT.STABBING     7
+419  1967                 ASSAULT.STABBING     7
+420  1968                 ASSAULT.STABBING     2
+421  1969                 ASSAULT.STABBING     8
+422  1970                 ASSAULT.STABBING    15
+423  1971                 ASSAULT.STABBING    19
+424  1972                 ASSAULT.STABBING    13
+425  1973                 ASSAULT.STABBING    16
+426  1974                 ASSAULT.STABBING     9
+427  1975                 ASSAULT.STABBING     8
+428  1976                 ASSAULT.STABBING    12
+429  1977                 ASSAULT.STABBING    14
+430  1978                 ASSAULT.STABBING     8
+431  1979                 ASSAULT.STABBING    10
+432  1980                 ASSAULT.STABBING     9
+433  1981                 ASSAULT.STABBING    13
+434  1982                 ASSAULT.STABBING    10
+435  1983                 ASSAULT.STABBING    11
+436  1984                 ASSAULT.STABBING    10
+437  1985                 ASSAULT.STABBING    10
+438  1986                 ASSAULT.STABBING     5
+439  1987                 ASSAULT.STABBING     9
+440  1988                 ASSAULT.STABBING     5
+441  1989                 ASSAULT.STABBING     9
+442  1990                 ASSAULT.STABBING    10
+443  1991                 ASSAULT.STABBING     2
+444  1992                 ASSAULT.STABBING     7
+445  1993                 ASSAULT.STABBING     6
+446  1994                 ASSAULT.STABBING     4
+447  1995                 ASSAULT.STABBING     8
+448  1996                 ASSAULT.STABBING     5
+449  1997                 ASSAULT.STABBING     8
+450  1998                 ASSAULT.STABBING     2
+451  1999                 ASSAULT.STABBING     6
+452  2000                 ASSAULT.STABBING     5
+453  2001                 ASSAULT.STABBING     2
+454  2002                 ASSAULT.STABBING     4
+455  2003                 ASSAULT.STABBING     4
+456  2004                 ASSAULT.STABBING     1
+457  2005                 ASSAULT.STABBING     2
+458  2006                 ASSAULT.STABBING     2
+459  2007                 ASSAULT.STABBING    NA
+460  2008                 ASSAULT.STABBING     6
+461  2009                 ASSAULT.STABBING     1
+462  2010                 ASSAULT.STABBING     6
+463  2011                 ASSAULT.STABBING     8
+464  2012                 ASSAULT.STABBING     6
+465  2013                 ASSAULT.STABBING     2
+466  2014                 ASSAULT.STABBING     4
+467  2015                 ASSAULT.STABBING     3
+468  2016                 ASSAULT.STABBING     4
+469  2017                 ASSAULT.STABBING     7
+470  2018                 ASSAULT.STABBING     4
+471  2019                 ASSAULT.STABBING     4
+472  2020                 ASSAULT.STABBING     1
+473  2021                 ASSAULT.STABBING    10
+474  2022                 ASSAULT.STABBING    NA
+475  1786 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+476  1787 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+477  1788 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+478  1789 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+479  1790 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+480  1791 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+481  1792 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+482  1793 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+483  1794 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+484  1795 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+485  1796 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+486  1797 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+487  1798 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+488  1799 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+489  1800 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+490  1801 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+491  1802 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+492  1803 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+493  1804 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+494  1805 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+495  1806 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+496  1807 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+497  1808 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+498  1809 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+499  1810 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+500  1811 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+501  1812 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+502  1813 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+503  1814 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+504  1815 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+505  1816 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+506  1817 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+507  1818 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+508  1819 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+509  1820 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+510  1821 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+511  1822 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+512  1823 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+513  1824 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+514  1825 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+515  1826 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+516  1827 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+517  1828 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+518  1829 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+519  1830 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+520  1831 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+521  1832 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+522  1833 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+523  1834 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+524  1835 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+525  1836 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+526  1837 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+527  1838 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+528  1839 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+529  1840 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+530  1841 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+531  1842 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+532  1843 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+533  1844 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+534  1845 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+535  1846 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+536  1847 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+537  1848 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+538  1849 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+539  1850 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+540  1851 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+541  1852 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+542  1853 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+543  1854 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+544  1855 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+545  1856 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+546  1857 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+547  1858 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+548  1859 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+549  1860 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+550  1861 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+551  1862 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+552  1863 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+553  1864 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+554  1865 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+555  1866 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+556  1867 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+557  1868 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+558  1869 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+559  1870 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+560  1871 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+561  1872 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+562  1873 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+563  1874 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+564  1875 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+565  1876 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+566  1877 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+567  1878 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+568  1879 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+569  1880 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+570  1881 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+571  1882 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+572  1883 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+573  1884 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+574  1885 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+575  1886 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+576  1887 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+577  1888 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+578  1889 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+579  1890 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+580  1891 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+581  1892 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+582  1893 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+583  1894 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+584  1895 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+585  1896 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+586  1897 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+587  1898 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+588  1899 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+589  1900 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+590  1901 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+591  1902 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+592  1903 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+593  1904 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+594  1905 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+595  1906 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+596  1907 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+597  1908 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+598  1909 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+599  1910 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+600  1911 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+601  1912 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+602  1913 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+603  1914 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+604  1915 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+605  1916 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+606  1917 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+607  1918 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+608  1919 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+609  1920 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+610  1921 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+611  1922 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+612  1923 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+613  1924 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+614  1925 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+615  1926 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+616  1927 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+617  1928 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+618  1929 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+619  1930 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+620  1931 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+621  1932 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+622  1933 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+623  1934 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+624  1935 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+625  1936 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+626  1937 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+627  1938 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+628  1939 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+629  1940 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+630  1941 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+631  1942 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+632  1943 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+633  1944 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+634  1945 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+635  1946 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+636  1947 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+637  1948 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+638  1949 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+639  1950 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+640  1951 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+641  1952 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+642  1953 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+643  1954 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+644  1955 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+645  1956 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+646  1957 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+647  1958 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+648  1959 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+649  1960 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+650  1961 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+651  1962 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+652  1963 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+653  1964 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+654  1965 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+655  1966 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+656  1967 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+657  1968 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+658  1969 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+659  1970 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+660  1971 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+661  1972 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+662  1973 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+663  1974 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+664  1975 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+665  1976 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+666  1977 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+667  1978 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+668  1979 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+669  1980 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+670  1981 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+671  1982 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+672  1983 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+673  1984 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+674  1985 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+675  1986 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+676  1987 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+677  1988 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+678  1989 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+679  1990 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+680  1991 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+681  1992 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+682  1993 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+683  1994 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+684  1995 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+685  1996 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+686  1997 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+687  1998 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+688  1999 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+689  2000 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+690  2001 X9.11_ATTACK_AND_RELATED_ILLNESS    72
+691  2002 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+692  2003 X9.11_ATTACK_AND_RELATED_ILLNESS     4
+693  2004 X9.11_ATTACK_AND_RELATED_ILLNESS     2
+694  2005 X9.11_ATTACK_AND_RELATED_ILLNESS     2
+695  2006 X9.11_ATTACK_AND_RELATED_ILLNESS     7
+696  2007 X9.11_ATTACK_AND_RELATED_ILLNESS    14
+697  2008 X9.11_ATTACK_AND_RELATED_ILLNESS    12
+698  2009 X9.11_ATTACK_AND_RELATED_ILLNESS    14
+699  2010 X9.11_ATTACK_AND_RELATED_ILLNESS     8
+700  2011 X9.11_ATTACK_AND_RELATED_ILLNESS    13
+701  2012 X9.11_ATTACK_AND_RELATED_ILLNESS    13
+702  2013 X9.11_ATTACK_AND_RELATED_ILLNESS    19
+703  2014 X9.11_ATTACK_AND_RELATED_ILLNESS    25
+704  2015 X9.11_ATTACK_AND_RELATED_ILLNESS    31
+705  2016 X9.11_ATTACK_AND_RELATED_ILLNESS    29
+706  2017 X9.11_ATTACK_AND_RELATED_ILLNESS    48
+707  2018 X9.11_ATTACK_AND_RELATED_ILLNESS    46
+708  2019 X9.11_ATTACK_AND_RELATED_ILLNESS    28
+709  2020 X9.11_ATTACK_AND_RELATED_ILLNESS    23
+710  2021 X9.11_ATTACK_AND_RELATED_ILLNESS    12
+711  2022 X9.11_ATTACK_AND_RELATED_ILLNESS    NA
+712  1786                            COVID    NA
+713  1787                            COVID    NA
+714  1788                            COVID    NA
+715  1789                            COVID    NA
+716  1790                            COVID    NA
+717  1791                            COVID    NA
+718  1792                            COVID    NA
+719  1793                            COVID    NA
+720  1794                            COVID    NA
+721  1795                            COVID    NA
+722  1796                            COVID    NA
+723  1797                            COVID    NA
+724  1798                            COVID    NA
+725  1799                            COVID    NA
+726  1800                            COVID    NA
+727  1801                            COVID    NA
+728  1802                            COVID    NA
+729  1803                            COVID    NA
+730  1804                            COVID    NA
+731  1805                            COVID    NA
+732  1806                            COVID    NA
+733  1807                            COVID    NA
+734  1808                            COVID    NA
+735  1809                            COVID    NA
+736  1810                            COVID    NA
+737  1811                            COVID    NA
+738  1812                            COVID    NA
+739  1813                            COVID    NA
+740  1814                            COVID    NA
+741  1815                            COVID    NA
+742  1816                            COVID    NA
+743  1817                            COVID    NA
+744  1818                            COVID    NA
+745  1819                            COVID    NA
+746  1820                            COVID    NA
+747  1821                            COVID    NA
+748  1822                            COVID    NA
+749  1823                            COVID    NA
+750  1824                            COVID    NA
+751  1825                            COVID    NA
+752  1826                            COVID    NA
+753  1827                            COVID    NA
+754  1828                            COVID    NA
+755  1829                            COVID    NA
+756  1830                            COVID    NA
+757  1831                            COVID    NA
+758  1832                            COVID    NA
+759  1833                            COVID    NA
+760  1834                            COVID    NA
+761  1835                            COVID    NA
+762  1836                            COVID    NA
+763  1837                            COVID    NA
+764  1838                            COVID    NA
+765  1839                            COVID    NA
+766  1840                            COVID    NA
+767  1841                            COVID    NA
+768  1842                            COVID    NA
+769  1843                            COVID    NA
+770  1844                            COVID    NA
+771  1845                            COVID    NA
+772  1846                            COVID    NA
+773  1847                            COVID    NA
+774  1848                            COVID    NA
+775  1849                            COVID    NA
+776  1850                            COVID    NA
+777  1851                            COVID    NA
+778  1852                            COVID    NA
+779  1853                            COVID    NA
+780  1854                            COVID    NA
+781  1855                            COVID    NA
+782  1856                            COVID    NA
+783  1857                            COVID    NA
+784  1858                            COVID    NA
+785  1859                            COVID    NA
+786  1860                            COVID    NA
+787  1861                            COVID    NA
+788  1862                            COVID    NA
+789  1863                            COVID    NA
+790  1864                            COVID    NA
+791  1865                            COVID    NA
+792  1866                            COVID    NA
+793  1867                            COVID    NA
+794  1868                            COVID    NA
+795  1869                            COVID    NA
+796  1870                            COVID    NA
+797  1871                            COVID    NA
+798  1872                            COVID    NA
+799  1873                            COVID    NA
+800  1874                            COVID    NA
+801  1875                            COVID    NA
+802  1876                            COVID    NA
+803  1877                            COVID    NA
+804  1878                            COVID    NA
+805  1879                            COVID    NA
+806  1880                            COVID    NA
+807  1881                            COVID    NA
+808  1882                            COVID    NA
+809  1883                            COVID    NA
+810  1884                            COVID    NA
+811  1885                            COVID    NA
+812  1886                            COVID    NA
+813  1887                            COVID    NA
+814  1888                            COVID    NA
+815  1889                            COVID    NA
+816  1890                            COVID    NA
+817  1891                            COVID    NA
+818  1892                            COVID    NA
+819  1893                            COVID    NA
+820  1894                            COVID    NA
+821  1895                            COVID    NA
+822  1896                            COVID    NA
+823  1897                            COVID    NA
+824  1898                            COVID    NA
+825  1899                            COVID    NA
+826  1900                            COVID    NA
+827  1901                            COVID    NA
+828  1902                            COVID    NA
+829  1903                            COVID    NA
+830  1904                            COVID    NA
+831  1905                            COVID    NA
+832  1906                            COVID    NA
+833  1907                            COVID    NA
+834  1908                            COVID    NA
+835  1909                            COVID    NA
+836  1910                            COVID    NA
+837  1911                            COVID    NA
+838  1912                            COVID    NA
+839  1913                            COVID    NA
+840  1914                            COVID    NA
+841  1915                            COVID    NA
+842  1916                            COVID    NA
+843  1917                            COVID    NA
+844  1918                            COVID    NA
+845  1919                            COVID    NA
+846  1920                            COVID    NA
+847  1921                            COVID    NA
+848  1922                            COVID    NA
+849  1923                            COVID    NA
+850  1924                            COVID    NA
+851  1925                            COVID    NA
+852  1926                            COVID    NA
+853  1927                            COVID    NA
+854  1928                            COVID    NA
+855  1929                            COVID    NA
+856  1930                            COVID    NA
+857  1931                            COVID    NA
+858  1932                            COVID    NA
+859  1933                            COVID    NA
+860  1934                            COVID    NA
+861  1935                            COVID    NA
+862  1936                            COVID    NA
+863  1937                            COVID    NA
+864  1938                            COVID    NA
+865  1939                            COVID    NA
+866  1940                            COVID    NA
+867  1941                            COVID    NA
+868  1942                            COVID    NA
+869  1943                            COVID    NA
+870  1944                            COVID    NA
+871  1945                            COVID    NA
+872  1946                            COVID    NA
+873  1947                            COVID    NA
+874  1948                            COVID    NA
+875  1949                            COVID    NA
+876  1950                            COVID    NA
+877  1951                            COVID    NA
+878  1952                            COVID    NA
+879  1953                            COVID    NA
+880  1954                            COVID    NA
+881  1955                            COVID    NA
+882  1956                            COVID    NA
+883  1957                            COVID    NA
+884  1958                            COVID    NA
+885  1959                            COVID    NA
+886  1960                            COVID    NA
+887  1961                            COVID    NA
+888  1962                            COVID    NA
+889  1963                            COVID    NA
+890  1964                            COVID    NA
+891  1965                            COVID    NA
+892  1966                            COVID    NA
+893  1967                            COVID    NA
+894  1968                            COVID    NA
+895  1969                            COVID    NA
+896  1970                            COVID    NA
+897  1971                            COVID    NA
+898  1972                            COVID    NA
+899  1973                            COVID    NA
+900  1974                            COVID    NA
+901  1975                            COVID    NA
+902  1976                            COVID    NA
+903  1977                            COVID    NA
+904  1978                            COVID    NA
+905  1979                            COVID    NA
+906  1980                            COVID    NA
+907  1981                            COVID    NA
+908  1982                            COVID    NA
+909  1983                            COVID    NA
+910  1984                            COVID    NA
+911  1985                            COVID    NA
+912  1986                            COVID    NA
+913  1987                            COVID    NA
+914  1988                            COVID    NA
+915  1989                            COVID    NA
+916  1990                            COVID    NA
+917  1991                            COVID    NA
+918  1992                            COVID    NA
+919  1993                            COVID    NA
+920  1994                            COVID    NA
+921  1995                            COVID    NA
+922  1996                            COVID    NA
+923  1997                            COVID    NA
+924  1998                            COVID    NA
+925  1999                            COVID    NA
+926  2000                            COVID    NA
+927  2001                            COVID    NA
+928  2002                            COVID    NA
+929  2003                            COVID    NA
+930  2004                            COVID    NA
+931  2005                            COVID    NA
+932  2006                            COVID    NA
+933  2007                            COVID    NA
+934  2008                            COVID    NA
+935  2009                            COVID    NA
+936  2010                            COVID    NA
+937  2011                            COVID    NA
+938  2012                            COVID    NA
+939  2013                            COVID    NA
+940  2014                            COVID    NA
+941  2015                            COVID    NA
+942  2016                            COVID    NA
+943  2017                            COVID    NA
+944  2018                            COVID    NA
+945  2019                            COVID    NA
+946  2020                            COVID   269
+947  2021                            COVID   446
+948  2022                            COVID    55
+949  1786                            OTHER     1
+950  1787                            OTHER    NA
+951  1788                            OTHER    NA
+952  1789                            OTHER    NA
+953  1790                            OTHER    NA
+954  1791                            OTHER    NA
+955  1792                            OTHER    NA
+956  1793                            OTHER    NA
+957  1794                            OTHER    NA
+958  1795                            OTHER    NA
+959  1796                            OTHER    NA
+960  1797                            OTHER    NA
+961  1798                            OTHER     1
+962  1799                            OTHER    NA
+963  1800                            OTHER    NA
+964  1801                            OTHER    NA
+965  1802                            OTHER    NA
+966  1803                            OTHER    NA
+967  1804                            OTHER    NA
+968  1805                            OTHER    NA
+969  1806                            OTHER    NA
+970  1807                            OTHER    NA
+971  1808                            OTHER    NA
+972  1809                            OTHER    NA
+973  1810                            OTHER    NA
+974  1811                            OTHER    NA
+975  1812                            OTHER    NA
+976  1813                            OTHER    NA
+977  1814                            OTHER    NA
+978  1815                            OTHER    NA
+979  1816                            OTHER    NA
+980  1817                            OTHER    NA
+981  1818                            OTHER    NA
+982  1819                            OTHER    NA
+983  1820                            OTHER    NA
+984  1821                            OTHER    NA
+985  1822                            OTHER    NA
+986  1823                            OTHER    NA
+987  1824                            OTHER    NA
+988  1825                            OTHER    NA
+989  1826                            OTHER    NA
+990  1827                            OTHER    NA
+991  1828                            OTHER    NA
+992  1829                            OTHER    NA
+993  1830                            OTHER    NA
+994  1831                            OTHER    NA
+995  1832                            OTHER    NA
+996  1833                            OTHER    NA
+997  1834                            OTHER    NA
+998  1835                            OTHER    NA
+999  1836                            OTHER    NA
+1000 1837                            OTHER    NA
+1001 1838                            OTHER    NA
+1002 1839                            OTHER     1
+1003 1840                            OTHER    NA
+1004 1841                            OTHER    NA
+1005 1842                            OTHER    NA
+1006 1843                            OTHER     1
+1007 1844                            OTHER    NA
+1008 1845                            OTHER    NA
+1009 1846                            OTHER    NA
+1010 1847                            OTHER    NA
+1011 1848                            OTHER    NA
+1012 1849                            OTHER     2
+1013 1850                            OTHER     1
+1014 1851                            OTHER     1
+1015 1852                            OTHER    NA
+1016 1853                            OTHER     4
+1017 1854                            OTHER    NA
+1018 1855                            OTHER     1
+1019 1856                            OTHER     4
+1020 1857                            OTHER     1
+1021 1858                            OTHER     3
+1022 1859                            OTHER     2
+1023 1860                            OTHER    NA
+1024 1861                            OTHER    NA
+1025 1862                            OTHER    NA
+1026 1863                            OTHER     3
+1027 1864                            OTHER     3
+1028 1865                            OTHER    NA
+1029 1866                            OTHER    NA
+1030 1867                            OTHER    NA
+1031 1868                            OTHER     3
+1032 1869                            OTHER     4
+1033 1870                            OTHER    13
+1034 1871                            OTHER     3
+1035 1872                            OTHER     3
+1036 1873                            OTHER     4
+1037 1874                            OTHER     6
+1038 1875                            OTHER     2
+1039 1876                            OTHER     4
+1040 1877                            OTHER     3
+1041 1878                            OTHER     9
+1042 1879                            OTHER     4
+1043 1880                            OTHER     2
+1044 1881                            OTHER     4
+1045 1882                            OTHER     4
+1046 1883                            OTHER     6
+1047 1884                            OTHER     5
+1048 1885                            OTHER     3
+1049 1886                            OTHER     9
+1050 1887                            OTHER     9
+1051 1888                            OTHER     7
+1052 1889                            OTHER     5
+1053 1890                            OTHER    10
+1054 1891                            OTHER    13
+1055 1892                            OTHER     8
+1056 1893                            OTHER    12
+1057 1894                            OTHER    22
+1058 1895                            OTHER    15
+1059 1896                            OTHER    10
+1060 1897                            OTHER    14
+1061 1898                            OTHER    17
+1062 1899                            OTHER    17
+1063 1900                            OTHER    18
+1064 1901                            OTHER    19
+1065 1902                            OTHER    20
+1066 1903                            OTHER    16
+1067 1904                            OTHER    31
+1068 1905                            OTHER    20
+1069 1906                            OTHER    29
+1070 1907                            OTHER    19
+1071 1908                            OTHER    37
+1072 1909                            OTHER    28
+1073 1910                            OTHER    20
+1074 1911                            OTHER    28
+1075 1912                            OTHER    20
+1076 1913                            OTHER    34
+1077 1914                            OTHER    36
+1078 1915                            OTHER    32
+1079 1916                            OTHER    52
+1080 1917                            OTHER    52
+1081 1918                            OTHER    64
+1082 1919                            OTHER    51
+1083 1920                            OTHER    54
+1084 1921                            OTHER    79
+1085 1922                            OTHER    89
+1086 1923                            OTHER    82
+1087 1924                            OTHER    91
+1088 1925                            OTHER    95
+1089 1926                            OTHER    74
+1090 1927                            OTHER   119
+1091 1928                            OTHER   107
+1092 1929                            OTHER   127
+1093 1930                            OTHER   123
+1094 1931                            OTHER   115
+1095 1932                            OTHER   123
+1096 1933                            OTHER    87
+1097 1934                            OTHER   107
+1098 1935                            OTHER   108
+1099 1936                            OTHER   111
+1100 1937                            OTHER   110
+1101 1938                            OTHER    98
+1102 1939                            OTHER    68
+1103 1940                            OTHER    78
+1104 1941                            OTHER    85
+1105 1942                            OTHER    72
+1106 1943                            OTHER    48
+1107 1944                            OTHER    58
+1108 1945                            OTHER    64
+1109 1946                            OTHER    78
+1110 1947                            OTHER    60
+1111 1948                            OTHER    82
+1112 1949                            OTHER    63
+1113 1950                            OTHER    69
+1114 1951                            OTHER    84
+1115 1952                            OTHER    60
+1116 1953                            OTHER    68
+1117 1954                            OTHER    79
+1118 1955                            OTHER    89
+1119 1956                            OTHER    77
+1120 1957                            OTHER    72
+1121 1958                            OTHER    69
+1122 1959                            OTHER    77
+1123 1960                            OTHER    87
+1124 1961                            OTHER    84
+1125 1962                            OTHER    85
+1126 1963                            OTHER    81
+1127 1964                            OTHER    93
+1128 1965                            OTHER    73
+1129 1966                            OTHER    95
+1130 1967                            OTHER   105
+1131 1968                            OTHER   128
+1132 1969                            OTHER    95
+1133 1970                            OTHER   114
+1134 1971                            OTHER    93
+1135 1972                            OTHER   106
+1136 1973                            OTHER   118
+1137 1974                            OTHER   138
+1138 1975                            OTHER   100
+1139 1976                            OTHER    90
+1140 1977                            OTHER    92
+1141 1978                            OTHER   110
+1142 1979                            OTHER   100
+1143 1980                            OTHER    99
+1144 1981                            OTHER    98
+1145 1982                            OTHER    99
+1146 1983                            OTHER   102
+1147 1984                            OTHER   105
+1148 1985                            OTHER    96
+1149 1986                            OTHER   106
+1150 1987                            OTHER   102
+1151 1988                            OTHER   113
+1152 1989                            OTHER   121
+1153 1990                            OTHER    98
+1154 1991                            OTHER    75
+1155 1992                            OTHER   100
+1156 1993                            OTHER    82
+1157 1994                            OTHER    93
+1158 1995                            OTHER   111
+1159 1996                            OTHER    79
+1160 1997                            OTHER   102
+1161 1998                            OTHER   113
+1162 1999                            OTHER   105
+1163 2000                            OTHER   109
+1164 2001                            OTHER   104
+1165 2002                            OTHER    99
+1166 2003                            OTHER   100
+1167 2004                            OTHER   119
+1168 2005                            OTHER   110
+1169 2006                            OTHER   102
+1170 2007                            OTHER   126
+1171 2008                            OTHER   105
+1172 2009                            OTHER    83
+1173 2010                            OTHER   108
+1174 2011                            OTHER    99
+1175 2012                            OTHER    78
+1176 2013                            OTHER    81
+1177 2014                            OTHER    85
+1178 2015                            OTHER    92
+1179 2016                            OTHER    84
+1180 2017                            OTHER    86
+1181 2018                            OTHER    85
+1182 2019                            OTHER    74
+1183 2020                            OTHER    70
+1184 2021                            OTHER    95
+1185 2022                            OTHER    35</code></pre>
+</div>
+</div>
+<p>#Plot your line chart using ggplot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long1,<span class="fu">aes</span>(<span class="at">x=</span>Year,<span class="at">y=</span>value, <span class="at">fill=</span>variable))<span class="sc">+</span><span class="fu">geom_area</span>()<span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"On-duty police officer deaths in the U.S.</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">          By cause since 1791"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 598 rows containing non-finite values (`stat_align()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="visualization_exercise_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 
