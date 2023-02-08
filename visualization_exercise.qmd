@@ -5,13 +5,15 @@ output:
     toc: FALSE
 ---
 
-This visualization exercise was conducted to replicate teh visualziation published on fivethirtyeight.com published in the year 2016 (On-duty police officer deaths in the U.S. [#15. On -duty police officer deaths](https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/) The data source for this chart was from the [Officer Down Memorial Page (ODMP)](https://www.odmp.org/). In trying to access the website, I was only able get annual fallen officer statistics [Annual Fallen Officer Statistics](https://www.odmp.org/statistics) rather than an aggregate data begining from the year 1700's as depicted on the fiverthirtyeight website. Alternatively, I was able to look through statista [U.S. law enforcement deaths 1786-2022, by cause \| Statista](https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.) which also claims to have obtained their data from ODMP. Therefor I used the dataset I found on statista because it is an aggregated data by year begining from the 1700's. The only difference was that the data in statista only had four catagories causes while the original included heart attack, accidents, etc,., The dataset obtained from statista includes causes such as Gunfire, Assaults/Stabbing, 9/11 attack and related illness, Covid and others. For the data they have in common, its very similar.
+This visualization exercise was conducted to replicate the line chart published on fivethirtyeight.com in 2016, titled "On-duty police officer deaths in the U.S". [#15. On -duty police officer deaths](https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/) The data source for this chart was from the [Officer Down Memorial Page (ODMP)](https://www.odmp.org/). In trying to access the website, I was only able to access the annual fallen officer statistics [Annual Fallen Officer Statistics](https://www.odmp.org/statistics) rather than an aggregate data begining from the year 1700's as depicted on the fiverthirtyeight website. Alternatively, I was able to look through statista [U.S. law enforcement deaths 1786-2022, by cause \| Statista](https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.) which also claims to have obtained their data from ODMP. Therefor I used the dataset I found on statista because it is an aggregated data by year begining from the 1700's. The only difference was that the data in statista only had four catagories causes while the original included cause catagories like heart attack, accidents, etc,., The dataset obtained from statista includes causes such as Gunfire, Assaults/Stabbing, 9/11 attack and related illness, COVID and others. For the data they have in common, the data is very similar.
 
 The below figure shows the chart I will attempt to replicate in this exercise
 
 ![](images/paste-C7215F2E.png){width="511"}
 
 Below is the line chart I replicated. All revelant codes are described below.
+
+I hope we can make this chart a lot better and closer to the original chart.
 
 ![](images/paste-32BC4579.png){width="566"}
 
@@ -40,7 +42,7 @@ lawdata<-read.csv("data/lawenforcementdata.csv")
 summary(lawdata)
 ```
 
-#in order to use line chart with mulitple variables we #first need to change the df from wide to long using the melt function
+#in order to use line chart with multiple variables we #first need to change the df from wide to long using the melt function
 
 ```{r}
 data_long1<-melt(lawdata, id.vars=c("Year"))
@@ -57,5 +59,5 @@ data_long1
 ```{r}
 ggplot(data_long1,aes(x=Year,y=value, fill=variable))+geom_area()+
   ggtitle("On-duty police officer deaths in the U.S.
-          By cause since 1791") + theme(legend.position=c(.25, .75))
+    By cause since 1791") + theme(legend.position=c(.25, .75))
 ```
