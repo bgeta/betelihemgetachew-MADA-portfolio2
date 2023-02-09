@@ -26,10 +26,10 @@ library(ggthemes)
 ```
 
 ```{r}
-lawdata<-read.csv("data/lawenforcementdata.csv")
+lawdata<-read.csv(here("data/lawenforcementdata.csv"))
 ```
 
-Data summary. The available data varies from the year 1786 to 2022 for Gunfire, Assault/Stabbing, 9/11 and related illness, COVID and other.
+Data summary. The available data begins from the year 1786 to 2022 and cause of death includes Gunfire, Assault/Stabbing, 9/11 and related illness, COVID and other.
 
 ```{r}
 message=FALSE
@@ -47,23 +47,19 @@ data_long1
 ```
 
 ```{r}
+complete.cases(data_long1) 
+```
+
+```{r}
 ggplot(data_long1,aes(x=Year,y=value, fill=variable))+geom_area()+
 ggtitle("On-duty police officer in the U.S. 
 By cause since 1786") + theme(legend.position=c(.25,.75))
 ```
 
-#I tried adding the theme_fivethirtyeight to match the aesthetics but it doesnt look like it worked? The code I used to remove the legend title variable didnt seem to work either.
+\~\~\~\~\~\~\~\~\~\~\~\~\~\~
 
-```{r}
-ggplot(data_long1,aes(x=Year,y=value, fill=variable))+geom_area()+
-ggtitle("On-duty police officer in the U.S. 
-By cause since 1786") + theme(legend.position=c(.25,.75)) + theme(legend.title=element_blank()+ theme_fivethirtyeight())+ annotate(geom="text",x=2001,y=72, label ="72 police
-                                                                                                                                   officeres died
-                                                                                                                                   in teh 9/11 
-                                                                                                                                   terrorist attack", hjust="top")
-```
+#I tried adding the theme_fivethirtyeight to match the aesthetics but it doesnt look like it worked. The code I used to remove the legend title variable didnt seem to work either. ggplot(data_long1,aes(x=Year,y=value, fill=variable))+geom_area()+ ggtitle("On-duty police officer in the U.S. By cause since 1786") + theme(legend.position=c(.25,.75)) + theme(legend.title=element_blank()+ theme_fivethirtyeight())+ annotate(geom="text",x=2001,y=72, label ="72 police officeres died in the 9/11terrorist attack", hjust="top")
 
-
-
+\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~
 
 This was a very useful exercise. The most important thing I learned was the importance of the data structure and how it needs to be manipulated to fit into a data structure (wide or long) in order for it to be compatible with the chart type you are using. Finding the specific color codes and background shades was very challenging. I did try to use theme_fivethirtyeight get the overall colors and themes to match but it doesn't look like it worked.
