@@ -207,11 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>This visualization exercise was conducted to replicate the line chart published on fivethirtyeight.com published in the year 2016 (On-duty police officer deaths in the U.S. <a href="https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/">#15. On -duty police officer deaths</a> The data source for this chart was from the <a href="https://www.odmp.org/">Officer Down Memorial Page (ODMP)</a>. In trying to access the website, I was only able get annual fallen officer statistics <a href="https://www.odmp.org/statistics">Annual Fallen Officer Statistics</a> rather than an aggregate data begining from the year 1700’s as depicted on the fiverthirtyeight website. Alternatively, I was able to look through statista <a href="https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.">U.S. law enforcement deaths 1786-2022, by cause | Statista</a> which also claims to have obtained their data from ODMP. Therefor I used the dataset I found on statista because it is an aggregated data by year begining from the 1700’s. The only difference was that the data in statista only had four catagories causes while the original included heart attack, accidents, etc,., The dataset obtained from statista includes causes such as Gunfire, Assaults/Stabbing, 9/11 attack and related illness, Covid and others. For the data they have in common, its very similar.</p>
-<p>The below figure shows the chart I will attempt to replicate in this exercise</p>
-<p><img src="images/paste-C7215F2E.png" class="img-fluid" width="511"></p>
-<p>Below is the line chart I replicated. All revelant codes are described below.</p>
-<p><img src="images/paste-32BC4579.png" class="img-fluid" width="566"></p>
+<p>This visualization excercise was conducted to replicate the line chart published on <a href="https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/">fivethirtyeight.com</a> in the year 2016. The chart is call “On duty police officer deaths in the U.S. By Cause”. The data source for this chart was from the <a href="https://www.odmp.org/">Officer Down Memorial Page(ODMP)</a>. In trying to access the website for this particular dataset, I was only able to get annual fallen officer statistics rather than an aggregate data beginning in 1700’s as depicted on the fivethirtyeightwebiste. Alternativly, I was able to look through statista <a href="https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.">U.S. law enforcement deaths 1786-2022, by cause | Statista</a> which also used ODMP data, and found an aggregate dataset from the 1700’s to 2020. The only difference was that the data in statista focused on four major catagories and also added COVID as a new category. The below figure show teh chart I will attempt to replicate in this exercise.</p>
+<p><img src="images/paste-7F085409.png" class="img-fluid"></p>
 <p><strong>Data import and cleaning</strong></p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
@@ -226,13 +223,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'reshape' was built under R version 4.2.2</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggthemes' was built under R version 4.2.2</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lawdata<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/lawenforcementdata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>lawdata<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/lawenforcementdata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>#check the data</p>
+<p>Data summary. The available data varies from the year 1786 to 2022 for Gunfire, Assault/Stabbing, 9/11 and related illness, COVID and other.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lawdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>message<span class="ot">=</span><span class="cn">FALSE</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lawdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Year         GUNFIRE       ASSAULT.STABBING
  Min.   :1786   Min.   :  1.00   Min.   : 1.00   
@@ -252,13 +253,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  NA's   :217                      NA's   :234     NA's   :67      </code></pre>
 </div>
 </div>
-<p>#in order to use line chart with multiple variables we #first need to change the df from wide to long using the melt function</p>
+<p>#changing my dataset from wide to long</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data_long1<span class="ot">&lt;-</span><span class="fu">melt</span>(lawdata, <span class="at">id.vars=</span><span class="fu">c</span>(<span class="st">"Year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_long1<span class="ot">&lt;-</span><span class="fu">melt</span>(lawdata, <span class="at">id.vars=</span><span class="fu">c</span>(<span class="st">"Year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>#check if the data look ok</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_long1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_long1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Year                         variable value
 1    1786                          GUNFIRE    NA
@@ -1448,11 +1448,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 1185 2022                            OTHER    35</code></pre>
 </div>
 </div>
-<p>#Plot your line chart using ggplot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long1,<span class="fu">aes</span>(<span class="at">x=</span>Year,<span class="at">y=</span>value, <span class="at">fill=</span>variable))<span class="sc">+</span><span class="fu">geom_area</span>()<span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"On-duty police officer deaths in the U.S.</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">    By cause since 1791"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long1,<span class="fu">aes</span>(<span class="at">x=</span>Year,<span class="at">y=</span>value, <span class="at">fill=</span>variable))<span class="sc">+</span><span class="fu">geom_area</span>()<span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggtitle</span>(<span class="st">"On-duty police officer in the U.S. </span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">By cause since 1786"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 598 rows containing non-finite values (`stat_align()`).</code></pre>
 </div>
@@ -1460,6 +1459,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="visualization_exercise_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>#I tried adding the theme_fivethirtyeight to match the aesthetics but it doesnt look like it worked? The code I used to remove the legend title variable didnt seem to work either.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long1,<span class="fu">aes</span>(<span class="at">x=</span>Year,<span class="at">y=</span>value, <span class="at">fill=</span>variable))<span class="sc">+</span><span class="fu">geom_area</span>()<span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggtitle</span>(<span class="st">"On-duty police officer in the U.S. </span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">By cause since 1786"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.title=</span><span class="fu">element_blank</span>()<span class="sc">+</span> <span class="fu">theme_fivethirtyeight</span>())<span class="sc">+</span> <span class="fu">annotate</span>(<span class="at">geom=</span><span class="st">"text"</span>,<span class="at">x=</span><span class="dv">2001</span>,<span class="at">y=</span><span class="dv">72</span>, <span class="at">label =</span><span class="st">"72 police</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">                                                                                                                                   officeres died</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">                                                                                                                                   in teh 9/11 </span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">                                                                                                                                   terrorist attack"</span>, <span class="at">hjust=</span><span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 598 rows containing non-finite values (`stat_align()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="visualization_exercise_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This was a very useful exercise. The most important thing I learned was the importance of the data structure and how it needs to be manipulated to fit into a data structure (wide or long) in order for it to be compatible with the chart type you are using. Finding the specific color codes and background shades was very challenging. I did try to use theme_fivethirtyeight get the overall colors and themes to match but it doesn’t look like it worked.</p>
 
 
 

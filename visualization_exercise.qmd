@@ -5,17 +5,9 @@ output:
     toc: FALSE
 ---
 
-This visualization exercise was conducted to replicate the line chart published on fivethirtyeight.com in 2016, titled "On-duty police officer deaths in the U.S". [#15. On -duty police officer deaths](https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/) The data source for this chart was from the [Officer Down Memorial Page (ODMP)](https://www.odmp.org/). In trying to access the website, I was only able to access the annual fallen officer statistics [Annual Fallen Officer Statistics](https://www.odmp.org/statistics) rather than an aggregate data begining from the year 1700's as depicted on the fiverthirtyeight website. Alternatively, I was able to look through statista [U.S. law enforcement deaths 1786-2022, by cause \| Statista](https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.) which also claims to have obtained their data from ODMP. Therefor I used the dataset I found on statista because it is an aggregated data by year begining from the 1700's. The only difference was that the data in statista only had four catagories causes while the original included cause catagories like heart attack, accidents, etc,., The dataset obtained from statista includes causes such as Gunfire, Assaults/Stabbing, 9/11 attack and related illness, COVID and others. For the data they have in common, the data is very similar.
+This visualization excercise was conducted to replicate the line chart published on [fivethirtyeight.com](https://fivethirtyeight.com/features/the-52-best-and-weirdest-charts-we-made-in-2016/) in the year 2016. The chart is call "On duty police officer deaths in the U.S. By Cause". The data source for this chart was from the [Officer Down Memorial Page(ODMP)](https://www.odmp.org/). In trying to access the website for this particular dataset, I was only able to get annual fallen officer statistics rather than an aggregate data beginning in 1700's as depicted on the fivethirtyeightwebiste. Alternativly, I was able to look through statista [U.S. law enforcement deaths 1786-2022, by cause \| Statista](https://www.statista.com/statistics/1070627/us-law-enforcement-deaths-by-cause-historical/#:~:text=Jun%2021%2C%202022%20Since%20the%201780s%2C%20over%2025%2C000,law%20enforcement%20deaths%20recorded%2C%20particularly%20before%20the%201930s.) which also used ODMP data, and found an aggregate dataset from the 1700's to 2020. The only difference was that the data in statista focused on four major catagories and also added COVID as a new category. The below figure show teh chart I will attempt to replicate in this exercise.
 
-The below figure shows the chart I will attempt to replicate in this exercise
-
-![](images/paste-C7215F2E.png){width="511"}
-
-Below is the line chart I replicated. All revelant codes are described below.
-
-I hope we can make this chart a lot better and closer to the original chart.
-
-![](images/paste-32BC4579.png){width="566"}
+![](images/paste-7F085409.png)
 
 **Data import and cleaning**
 
@@ -30,34 +22,48 @@ library(haven)
 library(memisc)
 library(ggplot2)
 library(reshape)
+library(ggthemes)
 ```
 
 ```{r}
 lawdata<-read.csv("data/lawenforcementdata.csv")
 ```
 
-#check the data
+Data summary. The available data varies from the year 1786 to 2022 for Gunfire, Assault/Stabbing, 9/11 and related illness, COVID and other.
 
 ```{r}
+message=FALSE
 summary(lawdata)
 ```
 
-#in order to use line chart with multiple variables we #first need to change the df from wide to long using the melt function
+#changing my dataset from wide to long
 
 ```{r}
 data_long1<-melt(lawdata, id.vars=c("Year"))
 ```
 
-#check if the data look ok
-
 ```{r}
 data_long1
 ```
 
-#Plot your line chart using ggplot
+```{r}
+ggplot(data_long1,aes(x=Year,y=value, fill=variable))+geom_area()+
+ggtitle("On-duty police officer in the U.S. 
+By cause since 1786") + theme(legend.position=c(.25,.75))
+```
+
+#I tried adding the theme_fivethirtyeight to match the aesthetics but it doesnt look like it worked? The code I used to remove the legend title variable didnt seem to work either.
 
 ```{r}
 ggplot(data_long1,aes(x=Year,y=value, fill=variable))+geom_area()+
-  ggtitle("On-duty police officer deaths in the U.S.
-    By cause since 1791") + theme(legend.position=c(.25, .75))
+ggtitle("On-duty police officer in the U.S. 
+By cause since 1786") + theme(legend.position=c(.25,.75)) + theme(legend.title=element_blank()+ theme_fivethirtyeight())+ annotate(geom="text",x=2001,y=72, label ="72 police
+                                                                                                                                   officeres died
+                                                                                                                                   in teh 9/11 
+                                                                                                                                   terrorist attack", hjust="top")
 ```
+
+
+
+
+This was a very useful exercise. The most important thing I learned was the importance of the data structure and how it needs to be manipulated to fit into a data structure (wide or long) in order for it to be compatible with the chart type you are using. Finding the specific color codes and background shades was very challenging. I did try to use theme_fivethirtyeight get the overall colors and themes to match but it doesn't look like it worked.
