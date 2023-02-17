@@ -193,7 +193,7 @@ age_gaps %>% group_by(director) %>% summarise(Freq=n()) %>% arrange(desc(Freq))
 
 Woody Allen, John Glen, Martin Scorsese, Mike Newell, Steven Spielberg have each released between 10-20 movies over the past 3 to 4 decades...
 
-# Notes
+# Notes 
 
 The data set was somewhat clean.There are 1155 observations with 13 variables. As far as the data, there are more men in the older actor group and more women in the young actor age group.The mean age difference is 10.4 years and the median age difference is 8 years. The age difference seemed to have decreased in recent years staying mostly between 0 to 20 years difference in the past 20 years. Last few decades there was a influx of movie releases.
 
