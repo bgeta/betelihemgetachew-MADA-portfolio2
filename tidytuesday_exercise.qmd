@@ -5,4 +5,196 @@ output:
     toc: FALSE
 ---
 
-Placeholder file for the future Tidy Tuesday exercise.
+**Load Necessary packages from library**
+
+Getting the data #Install tidytuesdayR which will load all datasets needed #install/download other needed packates
+
+```{r}
+library(tidytuesdayR)
+library(plyr)
+library(dplyr)
+library(ggplot2)
+library(here)
+library(tidyverse)
+library(janitor)
+library(reshape)
+
+```
+
+**Import Data**
+
+#load the tidytuesday data
+
+```{r}
+tuesdata<-tidytuesdayR::tt_load('2023-02-14')
+```
+
+#Read the specific age gaps dataset
+
+```{r}
+age_gaps<-tuesdata$age_gaps
+```
+
+**Getting Familiar with the data**
+
+#Ensure your data loaded correctly and understanding the data structure
+
+```{r}
+colnames(age_gaps)
+```
+
+```{r}
+view(age_gaps)
+```
+
+```{r}
+glimpse(age_gaps)
+```
+
+```{r}
+class(age_gaps)
+```
+
+```{r}
+dim(age_gaps)
+```
+
+```{r}
+summary(age_gaps)
+```
+
+```{r}
+str(age_gaps)
+names(age_gaps)
+print(age_gaps)
+```
+
+**Data Cleaning Checks**
+
+```{r}
+head(age_gaps)
+```
+
+#check for missing values
+
+```{r}
+age_gaps[age_gaps==""]
+```
+
+#check the class for each column
+
+```{r}
+sapply(age_gaps, class)
+```
+
+#convert column classes as approporiate , it was fine but i did it anyways
+
+```{r}
+age_gaps<-type.convert(age_gaps, as.is=TRUE)
+```
+
+#check if class is correct and appropriate
+
+```{r}
+sapply(age_gaps, class)
+```
+
+#now lets check any values that are outliers age_difference variable
+
+```{r}
+age_gaps$age_difference[age_gaps$age_difference %in% boxplot.stats(age_gaps$age_difference)$out] 
+```
+
+#Capitalize variable values and Change male to Male and female to Female
+
+```{r}
+age_gaps <- age_gaps %>%
+  mutate(character_1_gender = case_when(
+    character_1_gender == "man" ~ "Man",
+    character_1_gender == "woman" ~ "Woman")) %>%
+  mutate(character_2_gender = case_when(
+    character_2_gender == "man" ~ "Man",
+    character_2_gender == "woman" ~ "Woman"))
+```
+
+**Explore the Data!**
+
+#now explore the data more by looking at historgram and boxplots
+
+#The first histograms provides the distribution of the age difference in the sample and is right skewed. The second and third histograms provide the distribution of the age difference among the older actor and younger actor in the couples which seem to be normally distributed.
+
+```{r}
+hist(age_gaps$age_difference)
+hist(age_gaps$actor_1_age)
+hist(age_gaps$actor_2_age)
+```
+
+#plot to check for patterns in terms of movie releases by Year
+
+```{r}
+ggplot(age_gaps,aes(release_year))+ geom_freqpoly()+ggtitle("Movie Releases by Year: 1935 to 2022")
+```
+
+#There was a surge in movie releases between the year 1985 to about 2000. After the 2000s while it still remained that high number of movies were releaed, there were a few highs and lows.
+
+```{r}
+ggplot(data=age_gaps, aes(x=release_year, y=age_difference,col=age_difference))+geom_point()+ggtitle("Age difference between actors from 1935 to 2022")
+```
+
+#Mean and median age difference
+
+```{r}
+meandata=mean(age_gaps$age_difference)
+print(meandata)
+```
+
+```{r}
+mediandata=median(age_gaps$age_difference)
+print(mediandata)
+```
+
+# Gender difference in the young and older group
+
+**Proportion of older actor by Gender**
+
+#Approx. 81% Men and 18% Woman were older
+
+```{r}
+gender_table<-table(age_gaps$character_1_gender)
+gender_table/sum(gender_table)
+```
+
+**Proportion of younger actor by Gender**
+
+Approx. 18% Men and 81% Women were younger
+
+```{r}
+gender_table<-table(age_gaps$character_2_gender)
+prop.table(gender_table)
+```
+
+#Representing the above information in a bar chart ....
+
+```{r}
+ggplot(age_gaps, aes(character_1_gender, ..count..))+geom_bar(aes(fill=character_1_gender), position="dodge")+ ggtitle("The gender of the older character as identified by the person who submitted the data for this couple")
+```
+
+```{r}
+ggplot(age_gaps, aes(character_2_gender, ..count..))+geom_bar(aes(fill=character_2_gender), position="dodge")+ ggtitle("The gender of the younger character as identified by the person who submitted the data for this couple")
+```
+
+#Directors characteristics #director with the most releases.
+
+```{r}
+age_gaps %>% group_by(director) %>% summarise(Freq=n()) %>% arrange(desc(Freq)) 
+
+  
+```
+
+Woody Allen, John Glen, Martin Scorsese, Mike Newell, Steven Spielberg have each released between 10-20 movies over the past 3 to 4 decades...
+
+# Notes
+
+The data set was somewhat clean.There are 1155 observations with 13 variables. As far as the data, there are more men in the older actor group and more women in the young actor age group.The mean age difference is 10.4 years and the median age difference is 8 years. The age difference seemed to have decreased in recent years staying mostly between 0 to 20 years difference in the past 20 years. Last few decades there was a influx of movie releases.
+
+# 
