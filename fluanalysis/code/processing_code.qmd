@@ -1,0 +1,86 @@
+---
+title: "wrangling"
+format: html
+editor: visual
+---
+
+## Load the data
+
+\`\`\`{r}
+
+data_location \<- here::here("data","raw_data","Botswana.sav")
+
+rawdata\<- read_sav(data_location)
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+Load Data File
+
+```{r}
+
+data_location <- here::here("fluanalysis","raw_data","SympAct_Any_Pos.Rda")
+
+rawdata1<- readRDS(data_location)
+```
+
+Load necessary packages
+
+```{r}
+library(plyr)  # for data processing/cleaning
+library(dplyr) #for data processing/cleaning
+library(tidyselect)# for datawrangling
+library(tidymodels)#for modeling
+library(tidyr) #for data processing/cleaning
+library(skimr) #for nice visualization of data 
+library(here)  #to set paths 
+library(gmodels)#to look at the tables 
+library(ggplot2) #to plot histograms and charts
+
+
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+**The below head, glimpse and summary functions will give an idea of what the data looks like and what it contains as well as missing values**
+
+```{r}
+head(rawdata1)
+```
+
+```{r}
+glimpse(rawdata1)
+```
+
+```{r}
+summary(rawdata1)
+```
+
+```{r}
+rawdata1 <-as.data.frame(rawdata1)
+```
+
+```{r}
+rawdata2 <- rawdata1 %>% 
+  select(-contains('Score')) %>%
+  select(-contains('Total'))%>%
+  select(-contains('FluA'))%>%
+ select(-contains('FluB'))%>%
+ select(-contains('Dxname'))%>%
+select(-contains('Activity'))%>%
+select(-c('Unique.Visit'))
+```
+
+#Removing NAs
+
+```{r}
+processed_data<-rawdata2[complete.cases(rawdata2),]
+```
+
+```{r}
+save_data_location <- here::here("fluanalysis","Processed_data","Processed_data.RDS")
+saveRDS(processed_data,file=save_data_location)
+```

@@ -1,0 +1,207 @@
+---
+title: "Exploration"
+format: html
+editor: visual
+---
+
+```{r}
+library(plyr)  # for data processing/cleaning
+library(dplyr) #for data processing/cleaning
+library(tidyselect)# for datawrangling
+library(tidymodels)#for modeling
+library(tidyr) #for data processing/cleaning
+library(skimr) #for nice visualization of data 
+library(here)  #to set paths 
+library(gmodels)#to look at the tables 
+library(ggplot2) #to plot histograms and charts
+library(olsrr)# for variable selection
+library(tibble)#for better organization of hte data
+library(gt)
+```
+
+## Load cleaned data set
+
+Create path to cleaned data set
+
+```{r}
+data_location <- here::here("fluanalysis","processed_data","Processed_data.RDS")
+```
+
+Load cleaned data set into r
+
+```{r}
+Clean_df<- readRDS(data_location)
+```
+
+```{r echo=FALSE}
+View(Clean_df)
+```
+
+```{r}
+Clean<-as_tibble(Clean_df)
+```
+
+#Sometimes you can get a sense of the dataset if the variables names are descriptive
+
+```{r}
+names(Clean)
+```
+
+#Get familiar with variables
+
+```{r}
+class(Clean)
+```
+
+```{r}
+summary(Clean)
+```
+
+**Summary tables for select categorical variables**
+
+```{r}
+Clean %>% 
+group_by(Nausea,Vomit)%>%
+tally()%>%
+  gt()%>%
+  tab_header(title=("Summary Table: Nausea and Vomit"))
+```
+
+```{r}
+Clean %>% 
+group_by(Nausea,Diarrhea)%>%
+tally()%>%
+gt()%>%
+  tab_header(title=("Summary Table: Nausea and Diarrhea "))
+```
+
+```{r}
+Clean %>% 
+group_by(Nausea,Weakness)%>%
+tally()%>%
+gt()%>%
+  tab_header(title=("Summary Table: Nausea and Weakness "))
+```
+
+**Note**: Very few people seem to have experienced Nausea with vomit and Nausea with Diarrhea; and Nausea with Weakness as symptom in this sample.
+
+Mean temperature by group
+
+```{r}
+Clean %>% 
+  group_by(CoughYN)%>%
+  summarise_at(vars(BodyTemp), list(Temp=mean))%>%
+gt()%>%
+  tab_header(title=("Mean Body Temp by Cough"))
+
+
+```
+
+```{r}
+Clean %>% 
+  group_by(Fatigue)%>%
+  summarise_at(vars(BodyTemp), list(Temp=mean))%>%
+gt()%>%
+  tab_header(title=("Mean Body Temp by Fatigue"))
+
+
+```
+
+```{r}
+Clean %>% 
+  group_by(SubjectiveFever)%>%
+  summarise_at(vars(BodyTemp), list(Temp=mean)) %>%
+gt()%>%
+  tab_header(title=("Mean Body Temp and Subjective Fever"))
+```
+
+```{r}
+Clean %>% 
+  group_by(Headache)%>%
+  summarise_at(vars(BodyTemp), list(Temp=mean))%>%
+gt()%>%
+  tab_header(title=("Mean Body Temp by Headache"))
+```
+
+```{r}
+Clean %>% 
+  group_by(Weakness)%>%
+  summarise_at(vars(BodyTemp), list(Temp=mean))%>%
+gt()%>%
+  tab_header(title=("Mean Body Temp by Weakness"))
+```
+
+```{r}
+Clean %>% 
+  group_by(Vomit)%>%
+  summarise_at(vars(BodyTemp), list(Temp=mean))%>%
+gt()%>%
+  
+  tab_header(title=("Mean Body Temp by presence or abscence of vomit"))
+```
+
+```{r}
+Clean %>% 
+  group_by(Diarrhea)%>%
+  summarise_at(vars(BodyTemp), list(name=mean))%>%
+gt()%>%
+  tab_header(title=("Mean Body Temp by presence of Diarrhea"))
+```
+
+**Notes:** The mean temperature of people who have cough, have fatigue, had slightly higher temperature. Those who had subjective fever also had higher body temperature. There were that much difference in body temperature of those with or without headache, as well as those with or without diarrhea. As the weakness level increases, so does the mean body temperature.
+
+Box plot to see the mean body temperature across various weakness levels.
+
+```{r}
+ggplot(Clean, aes(Weakness, BodyTemp))+
+  labs(x="Weakness", y = "BodyTemp")+ ggtitle("Body Temperature by Weakness")+
+  geom_boxplot(aes(fill=Weakness), size= 0.5, alpha = 0.2)+
+  theme_classic()+
+  theme(legend.position = "none")
+```
+
+Box plot to see the mean body temperature by cough intensity level.
+
+```{r}
+ggplot(Clean, aes(CoughIntensity, BodyTemp))+
+  labs(x="CoughIntensity", y = "BodyTemp")+ ggtitle("Body Temperature by Cough Intensity")+
+  geom_boxplot(aes(fill=CoughIntensity), size= 0.5, alpha = 0.2)+
+  theme_classic()+
+  theme(legend.position = "none")
+```
+
+**Note:** A visualization of the mean body temperature increasing as weakness level increases from none to mild weakness, to moderate weakness, to severe weakness. Similarly, as cough intensity increases so does the body temperature.
+
+Distribution of body temperature
+
+```{r}
+ ggplot(Clean)+
+  aes(x=BodyTemp)+ geom_histogram(bins=30L,fill="#0c4c8a")+ggtitle("Distribution of Body Temperature")+
+  theme_minimal()
+```
+
+#The distribution of body temperature seems slightly skewed to the right which means most peoples body temperature falls to the left of the histogram
+
+```{r echo=FALSE}
+ggplot(Clean, aes(CoughYN, ..count..))+geom_bar(aes(fill=CoughYN), position="dodge")+ ggtitle("Presence of Cough")
+```
+
+```{r echo=FALSE}
+ggplot(Clean, aes(Fatigue, ..count..))+geom_bar(aes(fill=Fatigue), position="dodge")+ ggtitle("Presence of Fatigue")
+```
+
+**Note**: Almost all people experienced cough and fatigue and headache.
+
+```{r echo=FALSE}
+ggplot(Clean, aes(Vomit, ..count..))+geom_bar(aes(fill=Vomit), position="dodge")+ ggtitle("Vomit")
+```
+
+```{r echo=FALSE}
+ggplot(Clean, aes(Diarrhea, ..count..))+geom_bar(aes(fill=Diarrhea), position="dodge")+ ggtitle("Diarrhea")
+```
+
+```{r echo=FALSE}
+ggplot(Clean, aes(Headache, ..count..))+geom_bar(aes(fill=Headache), position="dodge")+ ggtitle("Headache")
+```
+
+**Note**: Almost all did not experience vomiting, Diarrhea

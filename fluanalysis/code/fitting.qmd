@@ -1,0 +1,133 @@
+---
+title: "Fitting"
+format: html
+editor: visual
+---
+
+## Load necessary packages
+
+Load necessary packages
+
+```{r}
+library(broom.mixed)#for converting bayesian models to tidy tibbles
+library(dotwhisker)#for visualizing regression results 
+library(skimr) #for visualization
+library(here) #data loading/saving
+library(dplyr)#data cleaning and processing
+library(tidyr) #data cleaning and processing
+library(tidymodels) #for modeling
+library(gmodels)#for tables
+library(ggplot2)#for hisograms and charts
+library(performance)
+
+```
+
+**Load Cleaned data set for modeling**
+
+```{r}
+data_location <- here::here("fluanalysis","processed_data","Processed_data.RDS")
+```
+
+```{r}
+Clean_df<- readRDS(data_location)
+```
+
+**Build and Fit Model** *Liner Regression*
+
+Model 1. *Outcome variable*:Body temp (Numeric); *predictors:* Runny Nose.
+
+```{r}
+lm_model<-linear_reg()%>%set_engine("lm")
+```
+
+# Model 1 Fitting a linear model. Body Temperature using only RunnyNose as predictor
+
+```{r}
+model1<-
+  lm_model %>%
+  fit(BodyTemp ~ RunnyNose,data = Clean_df)
+model1
+```
+
+#Using the tidy function to get a better organized view of the result
+
+```{r}
+tidy(model1)
+```
+
+#we can also show the regression table results with dot and whisker plot
+
+```{r}
+tidy(model1) %>%
+  dwplot(dot_args = list(size=2,color="Blue"),
+         whisker_args = list(color="Red"),
+         vline=geom_vline(xintercept = 0,color="Black",linetype=2))
+```
+
+# Model 2 Fitting Body Temperature using ALL predictors
+
+```{r}
+model2<-
+  lm_model %>%
+ fit(BodyTemp ~ .,data=Clean_df)
+model2
+```
+
+```{r}
+tidy(model2)
+```
+
+#We can also show the regression table results with dot and whisker plot
+
+```{r}
+tidy(model2) %>%
+  dwplot(dot_args = list(size=2,color="Blue"),
+         whisker_args = list(color="Red"),
+         vline=geom_vline(xintercept = 0,color="Black",linetype=2))
+```
+
+#Compare model1 and model2, which model performs better?
+
+```{r}
+compare_performance(model1,model2)
+```
+
+**Conclusion** If looking at the R2 it looks like Model2 is a better fit than model1. However, if based on AIC, modle1 seems to be a better fit than model 2.
+
+\*Logistic Regression #Model 1 #Outcome=Nausea, Predictor=RunnyNose
+
+```{r}
+glm_model<-logistic_reg()%>%set_engine("glm")
+```
+
+```{r}
+glmmodel1<-glm_model %>%
+fit(Nausea ~ RunnyNose, data=Clean_df)
+glmmodel1
+```
+
+#Get a better organized look of the result
+
+```{r}
+tidy(glmmodel1)
+```
+
+```{r}
+glmmodel2<-glm_model %>%
+fit(Nausea ~ ., data=Clean_df)
+glmmodel2
+```
+
+#Get a better organized look of the result
+
+```{r}
+tidy(glmmodel2)
+```
+
+#Comparing the two logistic regression models for performance
+
+```{r}
+compare_performance(glmmodel1,glmmodel2)
+```
+
+**Logistic Regression Conclusion** Based on model quality indicators such as AIC, model1 seems to be a better fit than model2

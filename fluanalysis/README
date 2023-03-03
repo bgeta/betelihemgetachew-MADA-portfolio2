@@ -1,0 +1,8 @@
+The flue analysis dataset was downladed from this https://datadryad.org/stash/dataset/doi:10.5061/dryad.51c59zw4v
+Dataset
+
+The raw dataset is saved under the folder raw_data file name=SympAct_Any_Pos.Rda
+The processed or cleaned dataset is saved under the folder processed_data file name=Processed_data.RDS
+
+Codes
+The data cleaning and processing code is saved under code/processing_code. Exploration code is also saved under code/exploration. The codes used to model are saved under code/fitting. 
