@@ -6,12 +6,6 @@ editor: visual
 
 ## Load the data
 
-\`\`\`{r}
-
-data_location \<- here::here("data","raw_data","Botswana.sav")
-
-rawdata\<- read_sav(data_location)
-
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
 ## Running Code

@@ -1,0 +1,192 @@
+---
+title: "Model Evaluation"
+editor: visual
+---
+
+Load processed flu data file
+
+```{r}
+
+data_location <- here::here("fluanalysis","processed_data","Processed_data.Rds")
+
+Processed_data <- readRDS(data_location)
+```
+
+#Install necessary packages
+
+```{r}
+library(rsample) #for data splitting
+library(workflows) #for combining recipes and models
+library(tidymodels)  # for the parsnip package, along with the rest of #tidy models Helper packages
+library(readr)       # for importing data
+library(broom.mixed) # for converting bayesian models to tidy tibbles
+library(dotwhisker)  # for visualizing regression results
+library(dplyr)
+```
+
+#Split data into training dataset and test dataset
+
+```{r}
+set.seed(222)
+#select 3/4 of the data and save into training dataset
+data_split <- initial_split(Processed_data, prop=3/4)
+#now create the two data frames based on the above parameters
+train_data <- training(data_split)
+test_data <- testing(data_split)
+```
+
+```{r}
+glimpse(Processed_data)
+```
+
+### [Creating Model 1]{.underline}
+
+### Creating a recipe
+
+```{r}
+flu_rec <-
+  recipe(Nausea ~ ., data=train_data)
+```
+
+### **Creating a model**
+
+```{r}
+lr_mod<-
+  logistic_reg()%>%
+  set_engine("glm")
+
+```
+
+#### Combining the recipe and the model
+
+```{r}
+flu_wflow <-
+  workflow() %>%
+  add_model(lr_mod)%>%
+  add_recipe(flu_rec)
+```
+
+```{r}
+flu_wflow
+```
+
+```{r}
+flu_fit<-
+  flu_wflow %>%
+  fit(data=train_data)
+```
+
+#to view your model details
+
+```{r}
+flu_fit %>%
+  extract_fit_parsnip() %>%
+  tidy()
+```
+
+**Model flu_fit evaluation**
+
+```{r}
+predict(flu_fit,test_data)
+```
+
+```{r}
+flu_aug <-
+  augment(flu_fit, test_data)
+```
+
+```{r}
+flu_aug %>%
+select (Nausea, RunnyNose,Fatigue,.pred_class,.pred_Yes)
+```
+
+```{r}
+flu_aug %>%
+  roc_curve(truth=Nausea, .pred_No) %>%
+  autoplot()
+```
+
+```{r}
+flu_aug %>%
+  roc_auc(truth=Nausea, .pred_No)
+```
+
+### [Alternative Model]{.underline}
+
+In this model we will fit only one predictor, our main predictor, the variable RunnyNose.
+
+### Creating a recipe
+
+```{r}
+flu_recA <-
+  recipe(Nausea ~ RunnyNose, data=train_data)
+```
+
+### **Creating a model**
+
+```{r}
+lr_mod<-
+  logistic_reg()%>%
+  set_engine("glm")
+
+```
+
+#### Combining the recipe and the model
+
+```{r}
+flu_wflowA <-
+  workflow() %>%
+  add_model(lr_mod)%>%
+  add_recipe(flu_recA)
+```
+
+```{r}
+flu_wflowA
+```
+
+```{r}
+flu_fitA<-
+  flu_wflowA %>%
+  fit(data=train_data)
+```
+
+#to view your model details
+
+```{r}
+flu_fitA %>%
+  extract_fit_parsnip() %>%
+  tidy()
+```
+
+**Model flu_fit evaluation**
+
+```{r}
+predict(flu_fitA,test_data)
+```
+
+```{r}
+flu_augA <-
+  augment(flu_fitA, test_data)
+```
+
+```{r}
+flu_augA %>%
+select (Nausea, RunnyNose,Fatigue,.pred_class,.pred_Yes)
+```
+
+```{r}
+flu_augA %>%
+  roc_curve(truth=Nausea, .pred_No) %>%
+  autoplot()
+```
+
+```{r}
+flu_augA %>%
+  roc_auc(truth=Nausea, .pred_No)
+```
+
+### [Conclusion]{.underline}
+
+From these model evaluation exercise, the first model where all predictors are used is a better fit. The roc_auc value is well over .5
+
+The Alternative (Second model) where only RunnyNose variable is used as a predictor is NOT a good performing model. The roc_auc is under .5, and the graph seems like there is under fitting.
