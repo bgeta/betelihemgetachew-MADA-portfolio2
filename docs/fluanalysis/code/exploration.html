@@ -231,10 +231,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plyr)  <span class="co"># for data processing/cleaning</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co">#for data processing/cleaning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plyr)  <span class="co"># for data processing/cleaning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'plyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co">#for data processing/cleaning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -256,59 +259,71 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyselect)<span class="co"># for datawrangling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyselect)<span class="co"># for datawrangling</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)<span class="co">#for modeling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyselect' was built under R version 4.2.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)<span class="co">#for modeling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidymodels' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'tidymodels' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching packages ────────────────────────────────────── tidymodels 1.0.0 ──</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ broom        1.0.1     ✔ rsample      1.1.1
-✔ dials        1.1.0     ✔ tibble       3.1.8
-✔ ggplot2      3.4.0     ✔ tidyr        1.2.0
+<pre><code>✔ broom        1.0.4     ✔ rsample      1.1.1
+✔ dials        1.1.0     ✔ tibble       3.2.1
+✔ ggplot2      3.4.1     ✔ tidyr        1.3.0
 ✔ infer        1.0.4     ✔ tune         1.0.1
 ✔ modeldata    1.1.0     ✔ workflows    1.1.3
 ✔ parsnip      1.0.4     ✔ workflowsets 1.0.0
-✔ purrr        0.3.4     ✔ yardstick    1.1.0
+✔ purrr        1.0.1     ✔ yardstick    1.1.0
 ✔ recipes      1.0.5     </code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dials' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'broom' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'dials' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'infer' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'scales' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'modeldata' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'parsnip' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'infer' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'recipes' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'modeldata' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'rsample' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'parsnip' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tune' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'purrr' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'workflows' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'recipes' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'workflowsets' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'rsample' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'yardstick' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'tibble' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tune' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'workflows' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'workflowsets' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'yardstick' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
@@ -326,16 +341,13 @@ Attaching package: 'dplyr'</code></pre>
 ✖ recipes::step()    masks stats::step()
 ✖ dplyr::summarise() masks plyr::summarise()
 ✖ dplyr::summarize() masks plyr::summarize()
-• Search for functions across packages at https://www.tidymodels.org/find/</code></pre>
+• Use tidymodels_prefer() to resolve common conflicts.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) <span class="co">#for data processing/cleaning</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr) <span class="co">#for nice visualization of data </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr) <span class="co">#for data processing/cleaning</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr) <span class="co">#for nice visualization of data </span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)  <span class="co">#to set paths </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'skimr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)  <span class="co">#to set paths </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>here() starts at C:/Data/GitHub/MADA23/betelihemgetachew-MADA-portfolio2</code></pre>
+<pre><code>here() starts at C:/Users/vjpan/Desktop/MADA/MADA2023/betelihemgetachew-MADA-portfolio2</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -346,14 +358,14 @@ Attaching package: 'here'</code></pre>
 
     here</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gmodels)<span class="co">#to look at the tables </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gmodels)<span class="co">#to look at the tables </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'gmodels' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'gmodels' was built under R version 4.2.3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#to plot histograms and charts</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olsrr)<span class="co"># for variable selection</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co">#to plot histograms and charts</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olsrr)<span class="co"># for variable selection</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'olsrr' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'olsrr' was built under R version 4.2.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -364,31 +376,31 @@ Attaching package: 'olsrr'</code></pre>
 
     rivers</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)<span class="co">#for better organization of hte data</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)<span class="co">#for better organization of hte data</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'gt' was built under R version 4.2.2</code></pre>
+<pre><code>Warning: package 'gt' was built under R version 4.2.3</code></pre>
 </div>
 </div>
 <section id="load-cleaned-data-set" class="level2">
 <h2 class="anchored" data-anchor-id="load-cleaned-data-set">Load cleaned data set</h2>
 <p>Create path to cleaned data set</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>data_location <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"fluanalysis"</span>,<span class="st">"processed_data"</span>,<span class="st">"Processed_data.RDS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>data_location <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"fluanalysis"</span>,<span class="st">"processed_data"</span>,<span class="st">"Processed_data.RDS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Load cleaned data set into r</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>Clean_df<span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>Clean_df<span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_location)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>Clean<span class="ot">&lt;-</span><span class="fu">as_tibble</span>(Clean_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>Clean<span class="ot">&lt;-</span><span class="fu">as_tibble</span>(Clean_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>#Sometimes you can get a sense of the dataset if the variables names are descriptive</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "SwollenLymphNodes" "ChestCongestion"   "ChillsSweats"     
  [4] "NasalCongestion"   "CoughYN"           "Sneeze"           
@@ -405,13 +417,13 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 <p>#Get familiar with variables</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(Clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(Clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> SwollenLymphNodes ChestCongestion ChillsSweats NasalCongestion CoughYN  
  No :418           No :323         No :130      No :167         No : 75  
@@ -459,19 +471,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 <p><strong>Summary tables for select categorical variables</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Nausea,Vomit)<span class="sc">%&gt;%</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Summary Table: Nausea and Vomit"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Nausea,Vomit)<span class="sc">%&gt;%</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Summary Table: Nausea and Vomit"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="hsyjdgxprk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ttrwtgiaab" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#hsyjdgxprk) .gt_table {
+:where(#ttrwtgiaab) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -496,7 +508,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_heading {
+:where(#ttrwtgiaab) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -508,12 +520,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_caption {
+:where(#ttrwtgiaab) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#hsyjdgxprk) .gt_title {
+:where(#ttrwtgiaab) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -525,7 +537,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#hsyjdgxprk) .gt_subtitle {
+:where(#ttrwtgiaab) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -537,13 +549,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#hsyjdgxprk) .gt_bottom_border {
+:where(#ttrwtgiaab) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_col_headings {
+:where(#ttrwtgiaab) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -558,7 +570,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_col_heading {
+:where(#ttrwtgiaab) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -578,7 +590,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#hsyjdgxprk) .gt_column_spanner_outer {
+:where(#ttrwtgiaab) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -590,15 +602,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#hsyjdgxprk) .gt_column_spanner_outer:first-child {
+:where(#ttrwtgiaab) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#hsyjdgxprk) .gt_column_spanner_outer:last-child {
+:where(#ttrwtgiaab) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#hsyjdgxprk) .gt_column_spanner {
+:where(#ttrwtgiaab) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -610,7 +622,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#hsyjdgxprk) .gt_group_heading {
+:where(#ttrwtgiaab) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -636,7 +648,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#hsyjdgxprk) .gt_empty_group_heading {
+:where(#ttrwtgiaab) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -651,15 +663,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#hsyjdgxprk) .gt_from_md > :first-child {
+:where(#ttrwtgiaab) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#hsyjdgxprk) .gt_from_md > :last-child {
+:where(#ttrwtgiaab) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#hsyjdgxprk) .gt_row {
+:where(#ttrwtgiaab) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -678,7 +690,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#hsyjdgxprk) .gt_stub {
+:where(#ttrwtgiaab) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -691,7 +703,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#hsyjdgxprk) .gt_stub_row_group {
+:where(#ttrwtgiaab) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -705,11 +717,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#hsyjdgxprk) .gt_row_group_first td {
+:where(#ttrwtgiaab) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#hsyjdgxprk) .gt_summary_row {
+:where(#ttrwtgiaab) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -719,16 +731,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#hsyjdgxprk) .gt_first_summary_row {
+:where(#ttrwtgiaab) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_first_summary_row.thick {
+:where(#ttrwtgiaab) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#hsyjdgxprk) .gt_last_summary_row {
+:where(#ttrwtgiaab) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -738,7 +750,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_grand_summary_row {
+:where(#ttrwtgiaab) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -748,7 +760,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#hsyjdgxprk) .gt_first_grand_summary_row {
+:where(#ttrwtgiaab) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,11 +770,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_striped {
+:where(#ttrwtgiaab) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#hsyjdgxprk) .gt_table_body {
+:where(#ttrwtgiaab) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -771,7 +783,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_footnotes {
+:where(#ttrwtgiaab) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -785,7 +797,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_footnote {
+:where(#ttrwtgiaab) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -794,7 +806,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#hsyjdgxprk) .gt_sourcenotes {
+:where(#ttrwtgiaab) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -808,7 +820,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#hsyjdgxprk) .gt_sourcenote {
+:where(#ttrwtgiaab) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -816,64 +828,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#hsyjdgxprk) .gt_left {
+:where(#ttrwtgiaab) .gt_left {
   text-align: left;
 }
 
-:where(#hsyjdgxprk) .gt_center {
+:where(#ttrwtgiaab) .gt_center {
   text-align: center;
 }
 
-:where(#hsyjdgxprk) .gt_right {
+:where(#ttrwtgiaab) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#hsyjdgxprk) .gt_font_normal {
+:where(#ttrwtgiaab) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#hsyjdgxprk) .gt_font_bold {
+:where(#ttrwtgiaab) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#hsyjdgxprk) .gt_font_italic {
+:where(#ttrwtgiaab) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#hsyjdgxprk) .gt_super {
+:where(#ttrwtgiaab) .gt_super {
   font-size: 65%;
 }
 
-:where(#hsyjdgxprk) .gt_footnote_marks {
+:where(#ttrwtgiaab) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#hsyjdgxprk) .gt_asterisk {
+:where(#ttrwtgiaab) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#hsyjdgxprk) .gt_indent_1 {
+:where(#ttrwtgiaab) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#hsyjdgxprk) .gt_indent_2 {
+:where(#ttrwtgiaab) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#hsyjdgxprk) .gt_indent_3 {
+:where(#ttrwtgiaab) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#hsyjdgxprk) .gt_indent_4 {
+:where(#ttrwtgiaab) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#hsyjdgxprk) .gt_indent_5 {
+:where(#ttrwtgiaab) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -913,19 +925,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Nausea,Diarrhea)<span class="sc">%&gt;%</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Summary Table: Nausea and Diarrhea "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Nausea,Diarrhea)<span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Summary Table: Nausea and Diarrhea "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="vbklpaonzf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="uuxlxulzzs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#vbklpaonzf) .gt_table {
+:where(#uuxlxulzzs) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -950,7 +962,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_heading {
+:where(#uuxlxulzzs) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -962,12 +974,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_caption {
+:where(#uuxlxulzzs) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#vbklpaonzf) .gt_title {
+:where(#uuxlxulzzs) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -979,7 +991,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#vbklpaonzf) .gt_subtitle {
+:where(#uuxlxulzzs) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -991,13 +1003,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#vbklpaonzf) .gt_bottom_border {
+:where(#uuxlxulzzs) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_col_headings {
+:where(#uuxlxulzzs) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1012,7 +1024,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_col_heading {
+:where(#uuxlxulzzs) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1032,7 +1044,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#vbklpaonzf) .gt_column_spanner_outer {
+:where(#uuxlxulzzs) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1044,15 +1056,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#vbklpaonzf) .gt_column_spanner_outer:first-child {
+:where(#uuxlxulzzs) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#vbklpaonzf) .gt_column_spanner_outer:last-child {
+:where(#uuxlxulzzs) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#vbklpaonzf) .gt_column_spanner {
+:where(#uuxlxulzzs) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1064,7 +1076,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#vbklpaonzf) .gt_group_heading {
+:where(#uuxlxulzzs) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1090,7 +1102,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#vbklpaonzf) .gt_empty_group_heading {
+:where(#uuxlxulzzs) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1105,15 +1117,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#vbklpaonzf) .gt_from_md > :first-child {
+:where(#uuxlxulzzs) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#vbklpaonzf) .gt_from_md > :last-child {
+:where(#uuxlxulzzs) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#vbklpaonzf) .gt_row {
+:where(#uuxlxulzzs) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1132,7 +1144,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#vbklpaonzf) .gt_stub {
+:where(#uuxlxulzzs) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1145,7 +1157,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vbklpaonzf) .gt_stub_row_group {
+:where(#uuxlxulzzs) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1159,11 +1171,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#vbklpaonzf) .gt_row_group_first td {
+:where(#uuxlxulzzs) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#vbklpaonzf) .gt_summary_row {
+:where(#uuxlxulzzs) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1173,16 +1185,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vbklpaonzf) .gt_first_summary_row {
+:where(#uuxlxulzzs) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_first_summary_row.thick {
+:where(#uuxlxulzzs) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#vbklpaonzf) .gt_last_summary_row {
+:where(#uuxlxulzzs) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1192,7 +1204,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_grand_summary_row {
+:where(#uuxlxulzzs) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1202,7 +1214,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vbklpaonzf) .gt_first_grand_summary_row {
+:where(#uuxlxulzzs) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1212,11 +1224,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_striped {
+:where(#uuxlxulzzs) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#vbklpaonzf) .gt_table_body {
+:where(#uuxlxulzzs) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1225,7 +1237,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_footnotes {
+:where(#uuxlxulzzs) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1239,7 +1251,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_footnote {
+:where(#uuxlxulzzs) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1248,7 +1260,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vbklpaonzf) .gt_sourcenotes {
+:where(#uuxlxulzzs) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1262,7 +1274,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vbklpaonzf) .gt_sourcenote {
+:where(#uuxlxulzzs) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1270,64 +1282,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vbklpaonzf) .gt_left {
+:where(#uuxlxulzzs) .gt_left {
   text-align: left;
 }
 
-:where(#vbklpaonzf) .gt_center {
+:where(#uuxlxulzzs) .gt_center {
   text-align: center;
 }
 
-:where(#vbklpaonzf) .gt_right {
+:where(#uuxlxulzzs) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#vbklpaonzf) .gt_font_normal {
+:where(#uuxlxulzzs) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#vbklpaonzf) .gt_font_bold {
+:where(#uuxlxulzzs) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#vbklpaonzf) .gt_font_italic {
+:where(#uuxlxulzzs) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#vbklpaonzf) .gt_super {
+:where(#uuxlxulzzs) .gt_super {
   font-size: 65%;
 }
 
-:where(#vbklpaonzf) .gt_footnote_marks {
+:where(#uuxlxulzzs) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#vbklpaonzf) .gt_asterisk {
+:where(#uuxlxulzzs) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#vbklpaonzf) .gt_indent_1 {
+:where(#uuxlxulzzs) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#vbklpaonzf) .gt_indent_2 {
+:where(#uuxlxulzzs) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#vbklpaonzf) .gt_indent_3 {
+:where(#uuxlxulzzs) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#vbklpaonzf) .gt_indent_4 {
+:where(#uuxlxulzzs) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#vbklpaonzf) .gt_indent_5 {
+:where(#uuxlxulzzs) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1367,19 +1379,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Nausea,Weakness)<span class="sc">%&gt;%</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Summary Table: Nausea and Weakness "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(Nausea,Weakness)<span class="sc">%&gt;%</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Summary Table: Nausea and Weakness "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="issjbhygly" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="swrrdaiwzv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#issjbhygly) .gt_table {
+:where(#swrrdaiwzv) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1404,7 +1416,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_heading {
+:where(#swrrdaiwzv) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1416,12 +1428,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_caption {
+:where(#swrrdaiwzv) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#issjbhygly) .gt_title {
+:where(#swrrdaiwzv) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1433,7 +1445,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#issjbhygly) .gt_subtitle {
+:where(#swrrdaiwzv) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1445,13 +1457,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#issjbhygly) .gt_bottom_border {
+:where(#swrrdaiwzv) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_col_headings {
+:where(#swrrdaiwzv) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1466,7 +1478,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_col_heading {
+:where(#swrrdaiwzv) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1486,7 +1498,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#issjbhygly) .gt_column_spanner_outer {
+:where(#swrrdaiwzv) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1498,15 +1510,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#issjbhygly) .gt_column_spanner_outer:first-child {
+:where(#swrrdaiwzv) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#issjbhygly) .gt_column_spanner_outer:last-child {
+:where(#swrrdaiwzv) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#issjbhygly) .gt_column_spanner {
+:where(#swrrdaiwzv) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1518,7 +1530,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#issjbhygly) .gt_group_heading {
+:where(#swrrdaiwzv) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1544,7 +1556,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#issjbhygly) .gt_empty_group_heading {
+:where(#swrrdaiwzv) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1559,15 +1571,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#issjbhygly) .gt_from_md > :first-child {
+:where(#swrrdaiwzv) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#issjbhygly) .gt_from_md > :last-child {
+:where(#swrrdaiwzv) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#issjbhygly) .gt_row {
+:where(#swrrdaiwzv) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1586,7 +1598,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#issjbhygly) .gt_stub {
+:where(#swrrdaiwzv) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1599,7 +1611,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#issjbhygly) .gt_stub_row_group {
+:where(#swrrdaiwzv) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1613,11 +1625,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#issjbhygly) .gt_row_group_first td {
+:where(#swrrdaiwzv) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#issjbhygly) .gt_summary_row {
+:where(#swrrdaiwzv) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1627,16 +1639,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#issjbhygly) .gt_first_summary_row {
+:where(#swrrdaiwzv) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_first_summary_row.thick {
+:where(#swrrdaiwzv) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#issjbhygly) .gt_last_summary_row {
+:where(#swrrdaiwzv) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1646,7 +1658,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_grand_summary_row {
+:where(#swrrdaiwzv) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1656,7 +1668,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#issjbhygly) .gt_first_grand_summary_row {
+:where(#swrrdaiwzv) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1666,11 +1678,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_striped {
+:where(#swrrdaiwzv) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#issjbhygly) .gt_table_body {
+:where(#swrrdaiwzv) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1679,7 +1691,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_footnotes {
+:where(#swrrdaiwzv) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1693,7 +1705,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_footnote {
+:where(#swrrdaiwzv) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1702,7 +1714,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#issjbhygly) .gt_sourcenotes {
+:where(#swrrdaiwzv) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1716,7 +1728,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#issjbhygly) .gt_sourcenote {
+:where(#swrrdaiwzv) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1724,64 +1736,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#issjbhygly) .gt_left {
+:where(#swrrdaiwzv) .gt_left {
   text-align: left;
 }
 
-:where(#issjbhygly) .gt_center {
+:where(#swrrdaiwzv) .gt_center {
   text-align: center;
 }
 
-:where(#issjbhygly) .gt_right {
+:where(#swrrdaiwzv) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#issjbhygly) .gt_font_normal {
+:where(#swrrdaiwzv) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#issjbhygly) .gt_font_bold {
+:where(#swrrdaiwzv) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#issjbhygly) .gt_font_italic {
+:where(#swrrdaiwzv) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#issjbhygly) .gt_super {
+:where(#swrrdaiwzv) .gt_super {
   font-size: 65%;
 }
 
-:where(#issjbhygly) .gt_footnote_marks {
+:where(#swrrdaiwzv) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#issjbhygly) .gt_asterisk {
+:where(#swrrdaiwzv) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#issjbhygly) .gt_indent_1 {
+:where(#swrrdaiwzv) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#issjbhygly) .gt_indent_2 {
+:where(#swrrdaiwzv) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#issjbhygly) .gt_indent_3 {
+:where(#swrrdaiwzv) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#issjbhygly) .gt_indent_4 {
+:where(#swrrdaiwzv) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#issjbhygly) .gt_indent_5 {
+:where(#swrrdaiwzv) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1831,19 +1843,19 @@ Attaching package: 'olsrr'</code></pre>
 <p><strong>Note</strong>: Very few people seem to have experienced Nausea with vomit and Nausea with Diarrhea; and Nausea with Weakness as symptom in this sample.</p>
 <p>Mean temperature by group</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CoughYN)<span class="sc">%&gt;%</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Cough"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(CoughYN)<span class="sc">%&gt;%</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Cough"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="njlqydniup" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rwjwiacqir" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#njlqydniup) .gt_table {
+:where(#rwjwiacqir) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1868,7 +1880,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_heading {
+:where(#rwjwiacqir) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1880,12 +1892,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_caption {
+:where(#rwjwiacqir) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#njlqydniup) .gt_title {
+:where(#rwjwiacqir) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1897,7 +1909,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#njlqydniup) .gt_subtitle {
+:where(#rwjwiacqir) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1909,13 +1921,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#njlqydniup) .gt_bottom_border {
+:where(#rwjwiacqir) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_col_headings {
+:where(#rwjwiacqir) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1930,7 +1942,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_col_heading {
+:where(#rwjwiacqir) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1950,7 +1962,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#njlqydniup) .gt_column_spanner_outer {
+:where(#rwjwiacqir) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1962,15 +1974,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#njlqydniup) .gt_column_spanner_outer:first-child {
+:where(#rwjwiacqir) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#njlqydniup) .gt_column_spanner_outer:last-child {
+:where(#rwjwiacqir) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#njlqydniup) .gt_column_spanner {
+:where(#rwjwiacqir) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1982,7 +1994,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#njlqydniup) .gt_group_heading {
+:where(#rwjwiacqir) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2008,7 +2020,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#njlqydniup) .gt_empty_group_heading {
+:where(#rwjwiacqir) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2023,15 +2035,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#njlqydniup) .gt_from_md > :first-child {
+:where(#rwjwiacqir) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#njlqydniup) .gt_from_md > :last-child {
+:where(#rwjwiacqir) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#njlqydniup) .gt_row {
+:where(#rwjwiacqir) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2050,7 +2062,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#njlqydniup) .gt_stub {
+:where(#rwjwiacqir) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2063,7 +2075,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#njlqydniup) .gt_stub_row_group {
+:where(#rwjwiacqir) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2077,11 +2089,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#njlqydniup) .gt_row_group_first td {
+:where(#rwjwiacqir) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#njlqydniup) .gt_summary_row {
+:where(#rwjwiacqir) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2091,16 +2103,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#njlqydniup) .gt_first_summary_row {
+:where(#rwjwiacqir) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_first_summary_row.thick {
+:where(#rwjwiacqir) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#njlqydniup) .gt_last_summary_row {
+:where(#rwjwiacqir) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2110,7 +2122,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_grand_summary_row {
+:where(#rwjwiacqir) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2120,7 +2132,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#njlqydniup) .gt_first_grand_summary_row {
+:where(#rwjwiacqir) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2130,11 +2142,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_striped {
+:where(#rwjwiacqir) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#njlqydniup) .gt_table_body {
+:where(#rwjwiacqir) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2143,7 +2155,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_footnotes {
+:where(#rwjwiacqir) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2157,7 +2169,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_footnote {
+:where(#rwjwiacqir) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2166,7 +2178,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#njlqydniup) .gt_sourcenotes {
+:where(#rwjwiacqir) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2180,7 +2192,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#njlqydniup) .gt_sourcenote {
+:where(#rwjwiacqir) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2188,64 +2200,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#njlqydniup) .gt_left {
+:where(#rwjwiacqir) .gt_left {
   text-align: left;
 }
 
-:where(#njlqydniup) .gt_center {
+:where(#rwjwiacqir) .gt_center {
   text-align: center;
 }
 
-:where(#njlqydniup) .gt_right {
+:where(#rwjwiacqir) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#njlqydniup) .gt_font_normal {
+:where(#rwjwiacqir) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#njlqydniup) .gt_font_bold {
+:where(#rwjwiacqir) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#njlqydniup) .gt_font_italic {
+:where(#rwjwiacqir) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#njlqydniup) .gt_super {
+:where(#rwjwiacqir) .gt_super {
   font-size: 65%;
 }
 
-:where(#njlqydniup) .gt_footnote_marks {
+:where(#rwjwiacqir) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#njlqydniup) .gt_asterisk {
+:where(#rwjwiacqir) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#njlqydniup) .gt_indent_1 {
+:where(#rwjwiacqir) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#njlqydniup) .gt_indent_2 {
+:where(#rwjwiacqir) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#njlqydniup) .gt_indent_3 {
+:where(#rwjwiacqir) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#njlqydniup) .gt_indent_4 {
+:where(#rwjwiacqir) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#njlqydniup) .gt_indent_5 {
+:where(#rwjwiacqir) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2275,19 +2287,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Fatigue)<span class="sc">%&gt;%</span></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Fatigue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Fatigue)<span class="sc">%&gt;%</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Fatigue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="vxarkykrzx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="jliitjlukw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#vxarkykrzx) .gt_table {
+:where(#jliitjlukw) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2312,7 +2324,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_heading {
+:where(#jliitjlukw) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2324,12 +2336,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_caption {
+:where(#jliitjlukw) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#vxarkykrzx) .gt_title {
+:where(#jliitjlukw) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2341,7 +2353,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#vxarkykrzx) .gt_subtitle {
+:where(#jliitjlukw) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2353,13 +2365,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#vxarkykrzx) .gt_bottom_border {
+:where(#jliitjlukw) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_col_headings {
+:where(#jliitjlukw) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2374,7 +2386,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_col_heading {
+:where(#jliitjlukw) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2394,7 +2406,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#vxarkykrzx) .gt_column_spanner_outer {
+:where(#jliitjlukw) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2406,15 +2418,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#vxarkykrzx) .gt_column_spanner_outer:first-child {
+:where(#jliitjlukw) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#vxarkykrzx) .gt_column_spanner_outer:last-child {
+:where(#jliitjlukw) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#vxarkykrzx) .gt_column_spanner {
+:where(#jliitjlukw) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2426,7 +2438,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#vxarkykrzx) .gt_group_heading {
+:where(#jliitjlukw) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2452,7 +2464,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#vxarkykrzx) .gt_empty_group_heading {
+:where(#jliitjlukw) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2467,15 +2479,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#vxarkykrzx) .gt_from_md > :first-child {
+:where(#jliitjlukw) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#vxarkykrzx) .gt_from_md > :last-child {
+:where(#jliitjlukw) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#vxarkykrzx) .gt_row {
+:where(#jliitjlukw) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2494,7 +2506,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#vxarkykrzx) .gt_stub {
+:where(#jliitjlukw) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2507,7 +2519,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vxarkykrzx) .gt_stub_row_group {
+:where(#jliitjlukw) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2521,11 +2533,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#vxarkykrzx) .gt_row_group_first td {
+:where(#jliitjlukw) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#vxarkykrzx) .gt_summary_row {
+:where(#jliitjlukw) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2535,16 +2547,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vxarkykrzx) .gt_first_summary_row {
+:where(#jliitjlukw) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_first_summary_row.thick {
+:where(#jliitjlukw) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#vxarkykrzx) .gt_last_summary_row {
+:where(#jliitjlukw) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2554,7 +2566,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_grand_summary_row {
+:where(#jliitjlukw) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2564,7 +2576,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vxarkykrzx) .gt_first_grand_summary_row {
+:where(#jliitjlukw) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2574,11 +2586,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_striped {
+:where(#jliitjlukw) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#vxarkykrzx) .gt_table_body {
+:where(#jliitjlukw) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2587,7 +2599,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_footnotes {
+:where(#jliitjlukw) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2601,7 +2613,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_footnote {
+:where(#jliitjlukw) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2610,7 +2622,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vxarkykrzx) .gt_sourcenotes {
+:where(#jliitjlukw) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2624,7 +2636,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#vxarkykrzx) .gt_sourcenote {
+:where(#jliitjlukw) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2632,64 +2644,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#vxarkykrzx) .gt_left {
+:where(#jliitjlukw) .gt_left {
   text-align: left;
 }
 
-:where(#vxarkykrzx) .gt_center {
+:where(#jliitjlukw) .gt_center {
   text-align: center;
 }
 
-:where(#vxarkykrzx) .gt_right {
+:where(#jliitjlukw) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#vxarkykrzx) .gt_font_normal {
+:where(#jliitjlukw) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#vxarkykrzx) .gt_font_bold {
+:where(#jliitjlukw) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#vxarkykrzx) .gt_font_italic {
+:where(#jliitjlukw) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#vxarkykrzx) .gt_super {
+:where(#jliitjlukw) .gt_super {
   font-size: 65%;
 }
 
-:where(#vxarkykrzx) .gt_footnote_marks {
+:where(#jliitjlukw) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#vxarkykrzx) .gt_asterisk {
+:where(#jliitjlukw) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#vxarkykrzx) .gt_indent_1 {
+:where(#jliitjlukw) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#vxarkykrzx) .gt_indent_2 {
+:where(#jliitjlukw) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#vxarkykrzx) .gt_indent_3 {
+:where(#jliitjlukw) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#vxarkykrzx) .gt_indent_4 {
+:where(#jliitjlukw) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#vxarkykrzx) .gt_indent_5 {
+:where(#jliitjlukw) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2719,19 +2731,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SubjectiveFever)<span class="sc">%&gt;%</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean)) <span class="sc">%&gt;%</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp and Subjective Fever"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(SubjectiveFever)<span class="sc">%&gt;%</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean)) <span class="sc">%&gt;%</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp and Subjective Fever"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="mmbxkanicu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vdzcxzibwh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#mmbxkanicu) .gt_table {
+:where(#vdzcxzibwh) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2756,7 +2768,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_heading {
+:where(#vdzcxzibwh) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2768,12 +2780,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_caption {
+:where(#vdzcxzibwh) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#mmbxkanicu) .gt_title {
+:where(#vdzcxzibwh) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2785,7 +2797,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#mmbxkanicu) .gt_subtitle {
+:where(#vdzcxzibwh) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2797,13 +2809,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#mmbxkanicu) .gt_bottom_border {
+:where(#vdzcxzibwh) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_col_headings {
+:where(#vdzcxzibwh) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2818,7 +2830,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_col_heading {
+:where(#vdzcxzibwh) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2838,7 +2850,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#mmbxkanicu) .gt_column_spanner_outer {
+:where(#vdzcxzibwh) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2850,15 +2862,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#mmbxkanicu) .gt_column_spanner_outer:first-child {
+:where(#vdzcxzibwh) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#mmbxkanicu) .gt_column_spanner_outer:last-child {
+:where(#vdzcxzibwh) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#mmbxkanicu) .gt_column_spanner {
+:where(#vdzcxzibwh) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2870,7 +2882,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#mmbxkanicu) .gt_group_heading {
+:where(#vdzcxzibwh) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2896,7 +2908,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#mmbxkanicu) .gt_empty_group_heading {
+:where(#vdzcxzibwh) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2911,15 +2923,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#mmbxkanicu) .gt_from_md > :first-child {
+:where(#vdzcxzibwh) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#mmbxkanicu) .gt_from_md > :last-child {
+:where(#vdzcxzibwh) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#mmbxkanicu) .gt_row {
+:where(#vdzcxzibwh) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2938,7 +2950,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#mmbxkanicu) .gt_stub {
+:where(#vdzcxzibwh) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2951,7 +2963,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#mmbxkanicu) .gt_stub_row_group {
+:where(#vdzcxzibwh) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2965,11 +2977,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#mmbxkanicu) .gt_row_group_first td {
+:where(#vdzcxzibwh) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#mmbxkanicu) .gt_summary_row {
+:where(#vdzcxzibwh) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2979,16 +2991,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#mmbxkanicu) .gt_first_summary_row {
+:where(#vdzcxzibwh) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_first_summary_row.thick {
+:where(#vdzcxzibwh) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#mmbxkanicu) .gt_last_summary_row {
+:where(#vdzcxzibwh) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2998,7 +3010,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_grand_summary_row {
+:where(#vdzcxzibwh) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3008,7 +3020,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#mmbxkanicu) .gt_first_grand_summary_row {
+:where(#vdzcxzibwh) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3018,11 +3030,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_striped {
+:where(#vdzcxzibwh) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#mmbxkanicu) .gt_table_body {
+:where(#vdzcxzibwh) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3031,7 +3043,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_footnotes {
+:where(#vdzcxzibwh) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3045,7 +3057,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_footnote {
+:where(#vdzcxzibwh) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3054,7 +3066,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#mmbxkanicu) .gt_sourcenotes {
+:where(#vdzcxzibwh) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3068,7 +3080,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#mmbxkanicu) .gt_sourcenote {
+:where(#vdzcxzibwh) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3076,64 +3088,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#mmbxkanicu) .gt_left {
+:where(#vdzcxzibwh) .gt_left {
   text-align: left;
 }
 
-:where(#mmbxkanicu) .gt_center {
+:where(#vdzcxzibwh) .gt_center {
   text-align: center;
 }
 
-:where(#mmbxkanicu) .gt_right {
+:where(#vdzcxzibwh) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#mmbxkanicu) .gt_font_normal {
+:where(#vdzcxzibwh) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#mmbxkanicu) .gt_font_bold {
+:where(#vdzcxzibwh) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#mmbxkanicu) .gt_font_italic {
+:where(#vdzcxzibwh) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#mmbxkanicu) .gt_super {
+:where(#vdzcxzibwh) .gt_super {
   font-size: 65%;
 }
 
-:where(#mmbxkanicu) .gt_footnote_marks {
+:where(#vdzcxzibwh) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#mmbxkanicu) .gt_asterisk {
+:where(#vdzcxzibwh) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#mmbxkanicu) .gt_indent_1 {
+:where(#vdzcxzibwh) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#mmbxkanicu) .gt_indent_2 {
+:where(#vdzcxzibwh) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#mmbxkanicu) .gt_indent_3 {
+:where(#vdzcxzibwh) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#mmbxkanicu) .gt_indent_4 {
+:where(#vdzcxzibwh) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#mmbxkanicu) .gt_indent_5 {
+:where(#vdzcxzibwh) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3163,19 +3175,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Headache)<span class="sc">%&gt;%</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Headache"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Headache)<span class="sc">%&gt;%</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Headache"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="yvgiraqhom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="outaqtfwnh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#yvgiraqhom) .gt_table {
+:where(#outaqtfwnh) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3200,7 +3212,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_heading {
+:where(#outaqtfwnh) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3212,12 +3224,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_caption {
+:where(#outaqtfwnh) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#yvgiraqhom) .gt_title {
+:where(#outaqtfwnh) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3229,7 +3241,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#yvgiraqhom) .gt_subtitle {
+:where(#outaqtfwnh) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3241,13 +3253,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#yvgiraqhom) .gt_bottom_border {
+:where(#outaqtfwnh) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_col_headings {
+:where(#outaqtfwnh) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3262,7 +3274,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_col_heading {
+:where(#outaqtfwnh) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3282,7 +3294,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#yvgiraqhom) .gt_column_spanner_outer {
+:where(#outaqtfwnh) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3294,15 +3306,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#yvgiraqhom) .gt_column_spanner_outer:first-child {
+:where(#outaqtfwnh) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#yvgiraqhom) .gt_column_spanner_outer:last-child {
+:where(#outaqtfwnh) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#yvgiraqhom) .gt_column_spanner {
+:where(#outaqtfwnh) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3314,7 +3326,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#yvgiraqhom) .gt_group_heading {
+:where(#outaqtfwnh) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3340,7 +3352,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#yvgiraqhom) .gt_empty_group_heading {
+:where(#outaqtfwnh) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3355,15 +3367,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#yvgiraqhom) .gt_from_md > :first-child {
+:where(#outaqtfwnh) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#yvgiraqhom) .gt_from_md > :last-child {
+:where(#outaqtfwnh) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#yvgiraqhom) .gt_row {
+:where(#outaqtfwnh) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3382,7 +3394,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#yvgiraqhom) .gt_stub {
+:where(#outaqtfwnh) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3395,7 +3407,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#yvgiraqhom) .gt_stub_row_group {
+:where(#outaqtfwnh) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3409,11 +3421,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#yvgiraqhom) .gt_row_group_first td {
+:where(#outaqtfwnh) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#yvgiraqhom) .gt_summary_row {
+:where(#outaqtfwnh) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3423,16 +3435,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#yvgiraqhom) .gt_first_summary_row {
+:where(#outaqtfwnh) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_first_summary_row.thick {
+:where(#outaqtfwnh) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#yvgiraqhom) .gt_last_summary_row {
+:where(#outaqtfwnh) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3442,7 +3454,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_grand_summary_row {
+:where(#outaqtfwnh) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3452,7 +3464,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#yvgiraqhom) .gt_first_grand_summary_row {
+:where(#outaqtfwnh) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3462,11 +3474,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_striped {
+:where(#outaqtfwnh) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#yvgiraqhom) .gt_table_body {
+:where(#outaqtfwnh) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3475,7 +3487,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_footnotes {
+:where(#outaqtfwnh) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3489,7 +3501,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_footnote {
+:where(#outaqtfwnh) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3498,7 +3510,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#yvgiraqhom) .gt_sourcenotes {
+:where(#outaqtfwnh) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3512,7 +3524,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#yvgiraqhom) .gt_sourcenote {
+:where(#outaqtfwnh) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3520,64 +3532,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#yvgiraqhom) .gt_left {
+:where(#outaqtfwnh) .gt_left {
   text-align: left;
 }
 
-:where(#yvgiraqhom) .gt_center {
+:where(#outaqtfwnh) .gt_center {
   text-align: center;
 }
 
-:where(#yvgiraqhom) .gt_right {
+:where(#outaqtfwnh) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#yvgiraqhom) .gt_font_normal {
+:where(#outaqtfwnh) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#yvgiraqhom) .gt_font_bold {
+:where(#outaqtfwnh) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#yvgiraqhom) .gt_font_italic {
+:where(#outaqtfwnh) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#yvgiraqhom) .gt_super {
+:where(#outaqtfwnh) .gt_super {
   font-size: 65%;
 }
 
-:where(#yvgiraqhom) .gt_footnote_marks {
+:where(#outaqtfwnh) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#yvgiraqhom) .gt_asterisk {
+:where(#outaqtfwnh) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#yvgiraqhom) .gt_indent_1 {
+:where(#outaqtfwnh) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#yvgiraqhom) .gt_indent_2 {
+:where(#outaqtfwnh) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#yvgiraqhom) .gt_indent_3 {
+:where(#outaqtfwnh) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#yvgiraqhom) .gt_indent_4 {
+:where(#outaqtfwnh) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#yvgiraqhom) .gt_indent_5 {
+:where(#outaqtfwnh) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3607,19 +3619,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Weakness)<span class="sc">%&gt;%</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Weakness"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Weakness)<span class="sc">%&gt;%</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by Weakness"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="golfiuajwj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mporysvfth" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#golfiuajwj) .gt_table {
+:where(#mporysvfth) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3644,7 +3656,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_heading {
+:where(#mporysvfth) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3656,12 +3668,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_caption {
+:where(#mporysvfth) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#golfiuajwj) .gt_title {
+:where(#mporysvfth) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3673,7 +3685,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#golfiuajwj) .gt_subtitle {
+:where(#mporysvfth) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3685,13 +3697,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#golfiuajwj) .gt_bottom_border {
+:where(#mporysvfth) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_col_headings {
+:where(#mporysvfth) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3706,7 +3718,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_col_heading {
+:where(#mporysvfth) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3726,7 +3738,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#golfiuajwj) .gt_column_spanner_outer {
+:where(#mporysvfth) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3738,15 +3750,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#golfiuajwj) .gt_column_spanner_outer:first-child {
+:where(#mporysvfth) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#golfiuajwj) .gt_column_spanner_outer:last-child {
+:where(#mporysvfth) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#golfiuajwj) .gt_column_spanner {
+:where(#mporysvfth) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3758,7 +3770,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#golfiuajwj) .gt_group_heading {
+:where(#mporysvfth) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3784,7 +3796,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#golfiuajwj) .gt_empty_group_heading {
+:where(#mporysvfth) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3799,15 +3811,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#golfiuajwj) .gt_from_md > :first-child {
+:where(#mporysvfth) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#golfiuajwj) .gt_from_md > :last-child {
+:where(#mporysvfth) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#golfiuajwj) .gt_row {
+:where(#mporysvfth) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3826,7 +3838,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#golfiuajwj) .gt_stub {
+:where(#mporysvfth) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3839,7 +3851,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#golfiuajwj) .gt_stub_row_group {
+:where(#mporysvfth) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3853,11 +3865,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#golfiuajwj) .gt_row_group_first td {
+:where(#mporysvfth) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#golfiuajwj) .gt_summary_row {
+:where(#mporysvfth) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3867,16 +3879,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#golfiuajwj) .gt_first_summary_row {
+:where(#mporysvfth) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_first_summary_row.thick {
+:where(#mporysvfth) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#golfiuajwj) .gt_last_summary_row {
+:where(#mporysvfth) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3886,7 +3898,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_grand_summary_row {
+:where(#mporysvfth) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3896,7 +3908,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#golfiuajwj) .gt_first_grand_summary_row {
+:where(#mporysvfth) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3906,11 +3918,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_striped {
+:where(#mporysvfth) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#golfiuajwj) .gt_table_body {
+:where(#mporysvfth) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3919,7 +3931,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_footnotes {
+:where(#mporysvfth) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3933,7 +3945,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_footnote {
+:where(#mporysvfth) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -3942,7 +3954,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#golfiuajwj) .gt_sourcenotes {
+:where(#mporysvfth) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3956,7 +3968,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#golfiuajwj) .gt_sourcenote {
+:where(#mporysvfth) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3964,64 +3976,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#golfiuajwj) .gt_left {
+:where(#mporysvfth) .gt_left {
   text-align: left;
 }
 
-:where(#golfiuajwj) .gt_center {
+:where(#mporysvfth) .gt_center {
   text-align: center;
 }
 
-:where(#golfiuajwj) .gt_right {
+:where(#mporysvfth) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#golfiuajwj) .gt_font_normal {
+:where(#mporysvfth) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#golfiuajwj) .gt_font_bold {
+:where(#mporysvfth) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#golfiuajwj) .gt_font_italic {
+:where(#mporysvfth) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#golfiuajwj) .gt_super {
+:where(#mporysvfth) .gt_super {
   font-size: 65%;
 }
 
-:where(#golfiuajwj) .gt_footnote_marks {
+:where(#mporysvfth) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#golfiuajwj) .gt_asterisk {
+:where(#mporysvfth) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#golfiuajwj) .gt_indent_1 {
+:where(#mporysvfth) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#golfiuajwj) .gt_indent_2 {
+:where(#mporysvfth) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#golfiuajwj) .gt_indent_3 {
+:where(#mporysvfth) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#golfiuajwj) .gt_indent_4 {
+:where(#mporysvfth) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#golfiuajwj) .gt_indent_5 {
+:where(#mporysvfth) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4055,20 +4067,20 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Vomit)<span class="sc">%&gt;%</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by presence or abscence of vomit"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Vomit)<span class="sc">%&gt;%</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">Temp=</span>mean))<span class="sc">%&gt;%</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by presence or abscence of vomit"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="gzhrqbvriz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zxenoifmfw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#gzhrqbvriz) .gt_table {
+:where(#zxenoifmfw) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4093,7 +4105,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_heading {
+:where(#zxenoifmfw) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4105,12 +4117,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_caption {
+:where(#zxenoifmfw) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#gzhrqbvriz) .gt_title {
+:where(#zxenoifmfw) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4122,7 +4134,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#gzhrqbvriz) .gt_subtitle {
+:where(#zxenoifmfw) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4134,13 +4146,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#gzhrqbvriz) .gt_bottom_border {
+:where(#zxenoifmfw) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_col_headings {
+:where(#zxenoifmfw) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4155,7 +4167,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_col_heading {
+:where(#zxenoifmfw) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4175,7 +4187,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#gzhrqbvriz) .gt_column_spanner_outer {
+:where(#zxenoifmfw) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4187,15 +4199,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#gzhrqbvriz) .gt_column_spanner_outer:first-child {
+:where(#zxenoifmfw) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#gzhrqbvriz) .gt_column_spanner_outer:last-child {
+:where(#zxenoifmfw) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#gzhrqbvriz) .gt_column_spanner {
+:where(#zxenoifmfw) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4207,7 +4219,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#gzhrqbvriz) .gt_group_heading {
+:where(#zxenoifmfw) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4233,7 +4245,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#gzhrqbvriz) .gt_empty_group_heading {
+:where(#zxenoifmfw) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4248,15 +4260,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#gzhrqbvriz) .gt_from_md > :first-child {
+:where(#zxenoifmfw) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#gzhrqbvriz) .gt_from_md > :last-child {
+:where(#zxenoifmfw) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#gzhrqbvriz) .gt_row {
+:where(#zxenoifmfw) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4275,7 +4287,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#gzhrqbvriz) .gt_stub {
+:where(#zxenoifmfw) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4288,7 +4300,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#gzhrqbvriz) .gt_stub_row_group {
+:where(#zxenoifmfw) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4302,11 +4314,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#gzhrqbvriz) .gt_row_group_first td {
+:where(#zxenoifmfw) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#gzhrqbvriz) .gt_summary_row {
+:where(#zxenoifmfw) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4316,16 +4328,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#gzhrqbvriz) .gt_first_summary_row {
+:where(#zxenoifmfw) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_first_summary_row.thick {
+:where(#zxenoifmfw) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#gzhrqbvriz) .gt_last_summary_row {
+:where(#zxenoifmfw) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4335,7 +4347,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_grand_summary_row {
+:where(#zxenoifmfw) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4345,7 +4357,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#gzhrqbvriz) .gt_first_grand_summary_row {
+:where(#zxenoifmfw) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4355,11 +4367,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_striped {
+:where(#zxenoifmfw) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#gzhrqbvriz) .gt_table_body {
+:where(#zxenoifmfw) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4368,7 +4380,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_footnotes {
+:where(#zxenoifmfw) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4382,7 +4394,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_footnote {
+:where(#zxenoifmfw) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4391,7 +4403,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#gzhrqbvriz) .gt_sourcenotes {
+:where(#zxenoifmfw) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4405,7 +4417,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#gzhrqbvriz) .gt_sourcenote {
+:where(#zxenoifmfw) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4413,64 +4425,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#gzhrqbvriz) .gt_left {
+:where(#zxenoifmfw) .gt_left {
   text-align: left;
 }
 
-:where(#gzhrqbvriz) .gt_center {
+:where(#zxenoifmfw) .gt_center {
   text-align: center;
 }
 
-:where(#gzhrqbvriz) .gt_right {
+:where(#zxenoifmfw) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#gzhrqbvriz) .gt_font_normal {
+:where(#zxenoifmfw) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#gzhrqbvriz) .gt_font_bold {
+:where(#zxenoifmfw) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#gzhrqbvriz) .gt_font_italic {
+:where(#zxenoifmfw) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#gzhrqbvriz) .gt_super {
+:where(#zxenoifmfw) .gt_super {
   font-size: 65%;
 }
 
-:where(#gzhrqbvriz) .gt_footnote_marks {
+:where(#zxenoifmfw) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#gzhrqbvriz) .gt_asterisk {
+:where(#zxenoifmfw) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#gzhrqbvriz) .gt_indent_1 {
+:where(#zxenoifmfw) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#gzhrqbvriz) .gt_indent_2 {
+:where(#zxenoifmfw) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#gzhrqbvriz) .gt_indent_3 {
+:where(#zxenoifmfw) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#gzhrqbvriz) .gt_indent_4 {
+:where(#zxenoifmfw) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#gzhrqbvriz) .gt_indent_5 {
+:where(#zxenoifmfw) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4500,19 +4512,19 @@ Attaching package: 'olsrr'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Diarrhea)<span class="sc">%&gt;%</span></span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">name=</span>mean))<span class="sc">%&gt;%</span></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by presence of Diarrhea"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>Clean <span class="sc">%&gt;%</span> </span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Diarrhea)<span class="sc">%&gt;%</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="fu">vars</span>(BodyTemp), <span class="fu">list</span>(<span class="at">name=</span>mean))<span class="sc">%&gt;%</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title=</span>(<span class="st">"Mean Body Temp by presence of Diarrhea"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="dkjsmodsiz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="burawbcqpe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#dkjsmodsiz) .gt_table {
+:where(#burawbcqpe) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4537,7 +4549,7 @@ Attaching package: 'olsrr'</code></pre>
   border-left-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_heading {
+:where(#burawbcqpe) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4549,12 +4561,12 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_caption {
+:where(#burawbcqpe) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#dkjsmodsiz) .gt_title {
+:where(#burawbcqpe) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4566,7 +4578,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-width: 0;
 }
 
-:where(#dkjsmodsiz) .gt_subtitle {
+:where(#burawbcqpe) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4578,13 +4590,13 @@ Attaching package: 'olsrr'</code></pre>
   border-top-width: 0;
 }
 
-:where(#dkjsmodsiz) .gt_bottom_border {
+:where(#burawbcqpe) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_col_headings {
+:where(#burawbcqpe) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4599,7 +4611,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_col_heading {
+:where(#burawbcqpe) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4619,7 +4631,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#dkjsmodsiz) .gt_column_spanner_outer {
+:where(#burawbcqpe) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4631,15 +4643,15 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 4px;
 }
 
-:where(#dkjsmodsiz) .gt_column_spanner_outer:first-child {
+:where(#burawbcqpe) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#dkjsmodsiz) .gt_column_spanner_outer:last-child {
+:where(#burawbcqpe) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#dkjsmodsiz) .gt_column_spanner {
+:where(#burawbcqpe) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4651,7 +4663,7 @@ Attaching package: 'olsrr'</code></pre>
   width: 100%;
 }
 
-:where(#dkjsmodsiz) .gt_group_heading {
+:where(#burawbcqpe) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4677,7 +4689,7 @@ Attaching package: 'olsrr'</code></pre>
   text-align: left;
 }
 
-:where(#dkjsmodsiz) .gt_empty_group_heading {
+:where(#burawbcqpe) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4692,15 +4704,15 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: middle;
 }
 
-:where(#dkjsmodsiz) .gt_from_md > :first-child {
+:where(#burawbcqpe) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#dkjsmodsiz) .gt_from_md > :last-child {
+:where(#burawbcqpe) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#dkjsmodsiz) .gt_row {
+:where(#burawbcqpe) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4719,7 +4731,7 @@ Attaching package: 'olsrr'</code></pre>
   overflow-x: hidden;
 }
 
-:where(#dkjsmodsiz) .gt_stub {
+:where(#burawbcqpe) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4732,7 +4744,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#dkjsmodsiz) .gt_stub_row_group {
+:where(#burawbcqpe) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4746,11 +4758,11 @@ Attaching package: 'olsrr'</code></pre>
   vertical-align: top;
 }
 
-:where(#dkjsmodsiz) .gt_row_group_first td {
+:where(#burawbcqpe) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#dkjsmodsiz) .gt_summary_row {
+:where(#burawbcqpe) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4760,16 +4772,16 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#dkjsmodsiz) .gt_first_summary_row {
+:where(#burawbcqpe) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_first_summary_row.thick {
+:where(#burawbcqpe) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#dkjsmodsiz) .gt_last_summary_row {
+:where(#burawbcqpe) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4779,7 +4791,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_grand_summary_row {
+:where(#burawbcqpe) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4789,7 +4801,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#dkjsmodsiz) .gt_first_grand_summary_row {
+:where(#burawbcqpe) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4799,11 +4811,11 @@ Attaching package: 'olsrr'</code></pre>
   border-top-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_striped {
+:where(#burawbcqpe) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#dkjsmodsiz) .gt_table_body {
+:where(#burawbcqpe) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4812,7 +4824,7 @@ Attaching package: 'olsrr'</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_footnotes {
+:where(#burawbcqpe) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4826,7 +4838,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_footnote {
+:where(#burawbcqpe) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -4835,7 +4847,7 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#dkjsmodsiz) .gt_sourcenotes {
+:where(#burawbcqpe) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4849,7 +4861,7 @@ Attaching package: 'olsrr'</code></pre>
   border-right-color: #D3D3D3;
 }
 
-:where(#dkjsmodsiz) .gt_sourcenote {
+:where(#burawbcqpe) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4857,64 +4869,64 @@ Attaching package: 'olsrr'</code></pre>
   padding-right: 5px;
 }
 
-:where(#dkjsmodsiz) .gt_left {
+:where(#burawbcqpe) .gt_left {
   text-align: left;
 }
 
-:where(#dkjsmodsiz) .gt_center {
+:where(#burawbcqpe) .gt_center {
   text-align: center;
 }
 
-:where(#dkjsmodsiz) .gt_right {
+:where(#burawbcqpe) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#dkjsmodsiz) .gt_font_normal {
+:where(#burawbcqpe) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#dkjsmodsiz) .gt_font_bold {
+:where(#burawbcqpe) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#dkjsmodsiz) .gt_font_italic {
+:where(#burawbcqpe) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#dkjsmodsiz) .gt_super {
+:where(#burawbcqpe) .gt_super {
   font-size: 65%;
 }
 
-:where(#dkjsmodsiz) .gt_footnote_marks {
+:where(#burawbcqpe) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#dkjsmodsiz) .gt_asterisk {
+:where(#burawbcqpe) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#dkjsmodsiz) .gt_indent_1 {
+:where(#burawbcqpe) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#dkjsmodsiz) .gt_indent_2 {
+:where(#burawbcqpe) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#dkjsmodsiz) .gt_indent_3 {
+:where(#burawbcqpe) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#dkjsmodsiz) .gt_indent_4 {
+:where(#burawbcqpe) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#dkjsmodsiz) .gt_indent_5 {
+:where(#burawbcqpe) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4946,22 +4958,22 @@ Attaching package: 'olsrr'</code></pre>
 <p><strong>Notes:</strong> The mean temperature of people who have cough, have fatigue, had slightly higher temperature. Those who had subjective fever also had higher body temperature. There were that much difference in body temperature of those with or without headache, as well as those with or without diarrhea. As the weakness level increases, so does the mean body temperature.</p>
 <p>Box plot to see the mean body temperature across various weakness levels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Clean, <span class="fu">aes</span>(Weakness, BodyTemp))<span class="sc">+</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Weakness"</span>, <span class="at">y =</span> <span class="st">"BodyTemp"</span>)<span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Body Temperature by Weakness"</span>)<span class="sc">+</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>Weakness), <span class="at">size=</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Clean, <span class="fu">aes</span>(Weakness, BodyTemp))<span class="sc">+</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Weakness"</span>, <span class="at">y =</span> <span class="st">"BodyTemp"</span>)<span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Body Temperature by Weakness"</span>)<span class="sc">+</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>Weakness), <span class="at">size=</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="exploration_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Box plot to see the mean body temperature by cough intensity level.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Clean, <span class="fu">aes</span>(CoughIntensity, BodyTemp))<span class="sc">+</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"CoughIntensity"</span>, <span class="at">y =</span> <span class="st">"BodyTemp"</span>)<span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Body Temperature by Cough Intensity"</span>)<span class="sc">+</span></span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>CoughIntensity), <span class="at">size=</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Clean, <span class="fu">aes</span>(CoughIntensity, BodyTemp))<span class="sc">+</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"CoughIntensity"</span>, <span class="at">y =</span> <span class="st">"BodyTemp"</span>)<span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Body Temperature by Cough Intensity"</span>)<span class="sc">+</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill=</span>CoughIntensity), <span class="at">size=</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="exploration_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -4969,9 +4981,9 @@ Attaching package: 'olsrr'</code></pre>
 <p><strong>Note:</strong> A visualization of the mean body temperature increasing as weakness level increases from none to mild weakness, to moderate weakness, to severe weakness. Similarly, as cough intensity increases so does the body temperature.</p>
 <p>Distribution of body temperature</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(Clean)<span class="sc">+</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x=</span>BodyTemp)<span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins=</span>30L,<span class="at">fill=</span><span class="st">"#0c4c8a"</span>)<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">"Distribution of Body Temperature"</span>)<span class="sc">+</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(Clean)<span class="sc">+</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x=</span>BodyTemp)<span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins=</span>30L,<span class="at">fill=</span><span class="st">"#0c4c8a"</span>)<span class="sc">+</span><span class="fu">ggtitle</span>(<span class="st">"Distribution of Body Temperature"</span>)<span class="sc">+</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="exploration_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>

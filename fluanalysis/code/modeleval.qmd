@@ -190,3 +190,113 @@ flu_augA %>%
 From these model evaluation exercise, the first model where all predictors are used is a better fit. The roc_auc value is well over .5
 
 The Alternative (Second model) where only RunnyNose variable is used as a predictor is NOT a good performing model. The roc_auc is under .5, and the graph seems like there is under fitting.
+
+# This section added by VIJAYPANTHAYI
+
+I will be repeating the previous steps, however, instead fitting linear models to the continuous variable, body temperature. In order to do this. the metric needs to be changed to RMSE (root-mean-square-error). 
+
+```{r}
+#Create the training and test data sets from the original data set
+set.seed(223)
+data_split_linear <- initial_split(Processed_data,prop=3/4)
+training_data_linear <- training(data_split_linear)
+test_data_linear <- testing(data_split_linear)
+```
+
+### Workflow Creation and Model Fitting
+
+We will use `tidymodels` to generate our linear regression model. We will use `recipe()` and `worklfow()` to create the workflow.
+
+```{r}
+# Initiate a new recipe
+linear_recipe <- recipe(BodyTemp ~ ., data = training_data_linear)
+# Create the linear regression model
+linear <- linear_reg() %>%
+             set_engine("lm")
+# Create the workflow
+flu_wflow_linear <- 
+      workflow() %>%
+      add_model(linear) %>%
+        add_recipe(linear_recipe)
+flu_wflow_linear
+```
+
+### Model 2 Evaluation
+
+Now that we have created the workflow, we can fit the model to the training and test data sets created previously.
+
+```{r}
+training_fit_linear <- flu_wflow_linear %>%
+                fit(data = training_data_linear)
+test_fit_linear <- flu_wflow_linear %>%
+                fit(data = test_data_linear)
+```
+
+The next step is to use the trained workflows, `training_fit`, to predict with unseen test data.
+
+```{r}
+predict(training_fit_linear, test_data_linear)
+```
+
+We now want to compare the estimates. To do this, we use `augment()`.
+
+```{r}
+training_aug_linear <- augment(training_fit_linear, training_data_linear)
+test_aug_linear <- augment(test_fit_linear, test_data_linear)
+```
+
+If we want to assess how well the model makes predictions, we can use RMSE (root-mean-square-error) on the `training_data` and the `test_data`. RMSE is commonly used to evaluate the quality of predictions by measuring how far predictions fall from the measured true values. The lower the RMSE, the better the model.
+
+```{r}
+training_aug_linear %>%
+      rmse(BodyTemp, .pred)
+```
+
+Now, same for `test_data`.
+
+```{r}
+test_aug_linear %>%
+      rmse(BodyTemp, .pred)
+```
+
+The RMSE value for the training data set is 1.106 and the RMSE value for the test data set is 1.0666. This indicates that the model couldn't find a solution or is not optimized very well for all predictors.
+
+### Alternative Model
+
+Now, lets repeat these steps with only 1 predictor.
+
+```{r}
+linear_recipe1 <- recipe(BodyTemp ~ RunnyNose, data = training_data_linear)
+
+flu_wflow_linear1 <- 
+        workflow() %>%
+        add_model(linear) %>%
+        add_recipe(linear_recipe1)
+
+training_fit_linear1 <- flu_wflow_linear1 %>%
+        fit(data = training_data_linear)
+
+test_fit_linear1 <- flu_wflow_linear1 %>%
+        fit(data = test_data_linear)
+
+training_aug_linear1 <- augment(training_fit_linear1, training_data_linear)
+test_aug_linear1 <- augment(test_fit_linear1, test_data_linear)
+```
+
+Now, let's find the RMSE for the training and test data sets.
+
+```{r}
+training_aug_linear1 %>%
+      rmse(BodyTemp, .pred)
+```
+
+Now, same for `test_data`.
+
+```{r}
+test_aug_linear1 %>%
+      rmse(BodyTemp, .pred)
+```
+
+The RMSE value for the training data set is 1.185 and the RMSE value for the test data set is 1.194. This still indicates that the model couldn't find a solution or is not optimized very well for all predictors.
+
+It appears that Model 1 predicts the categorical variable better than Model 2 predicts the continuous one.
