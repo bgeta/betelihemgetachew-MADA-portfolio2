@@ -1,0 +1,236 @@
+---
+title: "Machine Learning"
+editor: visual
+---
+
+Load packages
+
+```{r}
+library(dotwhisker)#for visualizing regression results 
+library(skimr) #for visualization
+library(here) #data loading/saving
+library(dplyr)#data cleaning and processing
+library(tidyr) #data cleaning and processing
+library(tidymodels) #for modeling
+library(gmodels)#for tables
+library(ggplot2)#for hisograms and charts
+library(performance)
+library(tidyverse)
+library(yardstick)
+library(dotwhisker)# for visualizing regresssion results
+library(broom.mixed)#for converting bayesian models to tidy tibbles
+library(readr)
+library(vip) #for variable importance plots
+#library(rpart)#for visualizing decision tree...note: WAS NOT ABLE TO INSTALL PACKAGE 
+#library(glmnet)  WAS NOT ABLE TO INSTALL PACKAGE 
+#library(ranger) WAS NOT ABLE TO INSTALL PACKAGE 
+```
+
+#Load most recent version of the dataset
+
+```{r}
+data_location <- here::here("fluanalysis","processed_data","Processed_data.RDS")
+```
+
+```{r}
+NewClean_df<- readRDS(data_location)
+```
+
+#checking the variables to make sure there are no identical variables. These variables are strongly correlated and lead to poor model performance. so we need to remove any identical variables. Also source of error "Predictions from a rank deficient fit may be misleading".
+
+```{r}
+view(NewClean_df)
+```
+
+After reviweing the dataset, four variables are identified as identical and thus we need to remove them.
+
+```{r}
+NewClean_df <- subset(NewClean_df, select=-c(WeaknessYN,CoughYN,CoughYN2,MyalgiaYN))
+```
+
+#check if referenced variables are removed
+
+```{r}
+view(NewClean_df)
+```
+
+#remove unbalanced predictors that are not helpful in fitting/predicting the outcome. We are now planning to remove all binary predictors with less than 50 observations. lets look at the summary so we can manually identify and remove them.
+
+```{r}
+summary(NewClean_df)
+```
+
+#The summary shows that two variables, Hearing and Vision have less than 50 observations in one of the two response values. Thus they need to be removed.
+
+```{r}
+NewClean_df <- subset(NewClean_df, select=-c(Hearing,Vision))
+```
+
+#now lets check if the two variables are removed
+
+```{r}
+dim(NewClean_df)
+
+```
+
+#It looks like we have 730 obervatios and 26 variables.
+
+# Analysis Code
+
+# Data Setup
+
+Data Setup #select of the data and save into training dataset, select 70 percent for training and 30% for testing. Also use the outcome BodyTemp as stratification for a more balanced outcome in the training and testing datasets
+
+```{r}
+set.seed(123)
+data_split <- initial_split(NewClean_df, prop=c(.7),Strata=BodyTemp)
+```
+
+#here we will split data for training and testing
+
+```{r}
+train_data <- training(data_split)
+test_data <- testing(data_split)
+```
+
+#take the train dataset and divide into 5 subsets using the vfold function
+
+```{r}
+folds<-vfold_cv(data=train_data, v=5, strata=BodyTemp)
+```
+
+#create a receipe for the data and fitting
+```{r}
+fluCV_rec <-
+  recipe (BodyTemp ~., data=train_data  )%>%
+step_dummy(all_nominal_predictors())
+```
+#Create null model
+#create receipe for null 
+```{r}
+nullrecipe<- recipe(BodyTemp ~ NULL, data=train_data )%>%
+  step_dummy(all_nominal_predictors())
+```
+#create model for null
+```{r}
+null_model<- null_model()%>%
+  set_engine("parsnip")%>%
+  set_mode ("regression")
+
+```
+#Create worflow for null by combining recipe and model
+```{r}
+nullworkflow <- 
+  workflow()%>%
+  add_model(null_model)%>%
+  add_recipe(nullrecipe)
+```
+# fit the null model using the null workflow
+```{r}
+null_model_performance <- fit_resamples(nullworkflow, resamples = folds)
+```
+#RMSE Lets get a better view of all 5 evaluation results
+
+```{r}
+null_model_performance %>%
+collect_metrics(summarize = FALSE)
+```
+
+Lets get a better view of one summarized result
+
+```{r}
+null_model_performance %>%
+collect_metrics(summarize = TRUE)
+```
+
+#The average RMSE is 1.22 for the null model performance 
+
+#computing RMSE for both training and test model using the null model
+
+
+#Model Tuning and Fitting
+#Decision tree model 
+
+```{r}
+tune_spec <- 
+  decision_tree(
+    cost_complexity = tune(),
+    tree_depth = tune()
+  ) %>% 
+  set_engine("rpart") %>% 
+  set_mode("regression")
+```
+
+```{r}
+tree_grid <- grid_regular(cost_complexity(),
+                          tree_depth(),
+                          levels = 5)
+```
+#Model tuining with a GRID
+```{r}
+tree_wf <- workflow()%>%
+  add_model(tune_spec)%>%
+  add_recipe(fluCV_rec)
+```
+
+```{r}
+tree_res <- tree_wf %>%
+  tune_grid(resamples = folds, grid=tree_grid)
+```
+
+```{r}
+tree_res %>%
+collect_metrics(summarize = TRUE)
+```
+
+#RMSE is 1.22
+
+```{r}
+tree_res %>%
+  collect_metrics() %>%
+  mutate(tree_depth = factor(tree_depth)) %>%
+  ggplot(aes(cost_complexity, mean, color = tree_depth)) +
+  geom_line(linewidth = 1.5, alpha = 0.6) +
+  geom_point(size = 2) +
+  facet_wrap(~ .metric, scales = "free", nrow = 2) +
+  scale_x_log10(labels = scales::label_number()) +
+  scale_color_viridis_d(option = "plasma", begin = .9, end = 0)
+
+```
+
+#show best tree model 
+
+```{r}
+tree_res %>%
+show_best("rmse")
+```
+
+```{r}
+best_tree <- tree_res %>% 
+select_best ("rmse")
+```
+
+```{r}
+best_tree
+```
+
+#Finazling the model/Tuning process
+```{r}
+final_wf <- tree_wf %>%
+finalize_workflow (best_tree)
+```
+
+```{r}
+final_wf
+```
+ 
+#Finalziing the last fit to training data 
+```{r}
+final_fit <- final_wf%>%
+  fit(train_data)
+```
+
+
+**Fit LASSO MODEL**
+#I KEPT RUNING INTO ERRORS, DELETED A BUNCH OF CODES IN ORDER TO BE ABLE TO RENDER. I WASNT ABLE TO INSTALL RPART.PLOT, RANGER, GLMENT. 
+

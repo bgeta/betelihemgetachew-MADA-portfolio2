@@ -24,7 +24,7 @@ library(dotwhisker)  # for visualizing regression results
 library(dplyr)
 ```
 
-#Split data into training dataset and test dataset
+1.  #Split data into training dataset and test dataset
 
 ```{r}
 set.seed(222)
@@ -193,7 +193,7 @@ The Alternative (Second model) where only RunnyNose variable is used as a predic
 
 # This section added by VIJAYPANTHAYI
 
-I will be repeating the previous steps, however, instead fitting linear models to the continuous variable, body temperature. In order to do this. the metric needs to be changed to RMSE (root-mean-square-error). 
+I will be repeating the previous steps, however, instead fitting linear models to the continuous variable, body temperature. In order to do this. the metric needs to be changed to RMSE (root-mean-square-error).
 
 ```{r}
 #Create the training and test data sets from the original data set
