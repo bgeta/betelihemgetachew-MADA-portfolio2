@@ -6,3 +6,125 @@ output:
 ---
 
 **To be filled..**
+
+```{r, echo=FALSE, message=FALSE}
+# load a few R packages
+library(tidytuesdayR)#this installs the dataset
+library(here)
+library(knitr)
+library(dplyr)
+library(tidyr)
+library(skimr)
+library(haven)
+library(memisc)
+library(ggplot2)
+library(reshape)
+library(ggthemes)
+library(DataExplorer)
+library(table1)
+```
+**Download/access data**
+```{r}
+eggproduction  <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-04-11/egg-production.csv')
+cagefreepercentages <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-04-11/cage-free-percentages.csv')
+```
+
+**Explore data**
+#take a first look a the dataset
+```{r}
+view(cagefreepercentages)
+view(eggproduction)
+```
+ ggplot2::ggplot(ggplot2::aes(x = observed_month, y = percent_hens)) +
+    ggplot2::geom_point(color = color, size = 1) +
+    ggplot2::geom_line(color = color) +
+    ggplot2::scale_x_date(
+      breaks = scales::date_breaks("1 year"),
+      date_labels = "%Y"
+#missing data
+```{r}
+plot_missing(cagefreepercentages)
+```
+# cagefree percentages seems like has almost half missing values 
+
+```{r}
+plot_missing(eggproduction)
+```
+#looks like the eggs production looks like a complete dataset with no missing values. 
+
+```{r}
+view(eggproduction)
+```
+
+#there seems to be an imbalance  where hatching eggs only has "all" observation, table eggs seem to have all three different process types. so removing the hatching eggs obsevation for a better analysis. 
+
+
+
+#now lets understand what the missing values are about in the cage free percentages dataset 
+
+```{r}
+view(cagefreepercentages)
+```
+#It looks like those from Egg-Markets-Overview-2019-10-19.pdf dont have percent egg computed, since we dont have the denominator we cannt compute so best to remove NA's
+
+```{r}
+cagefreepercentages <- cagefreepercentages[complete.cases(cagefreepercentages), ]
+view(cagefreepercentages)
+```
+#Eggfee percentages variabls include #data/percentegg/percenthen/source with n=54
+#eggproduction variables include #producttype/productprocess/eggs/hens/sources with n=220
+#by combining the two datasets we should have 
+
+#lets plot some graphs and see if there are any relationships
+
+```{r}
+ggplot(cagefreepercentages,aes(observed_month))+ #basic graph object
+  geom_line(aes(y=percent_hens), colour="red") + #layor 1
+  geom_line(aes(y=percent_eggs), colour ="green")+ #layor 2
+ggtitle("Percentages of Hens(RED) and eggs(Green), 2017-2021")+
+ xlab("Year")+ #add x axis label
+  ylab("Percentages")   #add y axis label
+
+```
+#seems like there is a relationship here with both hens and eggs percentages with an upward trend over time, note: I was not able to add the legend in the graph function 
+
+#Now lets look at the eggproductions dataset 
+```{r}
+mosaicplot(prod_type~prod_process,data=eggproduction,col=c("Blue","Red","Pink")) 
+```
+#This figure illestrates the two different product types (hatching eggs and table eggs) and the three different process types caged-organic, caged-non organic and all. Hatching eggs contains only "all" value whereas table eggs has equal amount of caged organic, caged non-organic and all(combined). 
+#still trying to find inspiration from this data. 
+#Perhaps we can go ahead and merge these two datasets for a more complete picture. 
+
+#Merge two datasets based on their common variable (inner join) observed month
+
+```{r}
+merged<- merge(x = cagefreepercentages, y = eggproduction, by = c("observed_month"))
+```
+#check your merged data
+
+```{r}
+view(merged)
+```
+#lets take a look 
+
+```{r}
+Eggdata <- (table1(~ n_hens + n_eggs  + factor(prod_process) +factor(prod_type)+percent_eggs + percent_hens , data=merged))
+
+Eggdata <- t1kable(Eggdata)
+Eggdata
+```
+
+
+
+```{r}
+Eggdata <- (table1(~ factor(prod_process) + n_hens + n_eggs +percent_eggs + percent_hens  | prod_type, data=merged))
+
+Eggdata <- t1kable(Eggdata)
+Eggdata
+```
+The above table shows all prod process types are available for hatching eggs where as cage free organice and non organic are available only for table eggs.
+
+Next steps , removing "all" observations from hatching eggs so that we are left with table eggs only with three prod process types. 
+#here I got stuck with an error about deleting atomic verctors..
+
